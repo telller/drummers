@@ -1,4 +1,8 @@
-import { render } from 'react-dom'
-import Routes from './Routes'
+import ReactDOM from 'react-dom';
+import React from 'react'
+import App from './app.jsx'
 
-render(Routes, document.getElementById('root'))
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
