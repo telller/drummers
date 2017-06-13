@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import './content.styl'
+import './catalog.styl'
 
-export default class Content extends Component {
+export default class Catalog extends Component {
   render () {
     return (
-      <div id='content'>
+      <div id='catalog'>
+        <h2 className='title'>Каталог товарів</h2>
+        <div className='line' />
         <section className='content_item top'>
           <article className='goods'>
             <img src='#' alt='img1' />
@@ -52,29 +54,34 @@ export default class Content extends Component {
             </ul>
           </article>
         </section>
-        <section className='content_item bottom'>
-          <article className='question'>
-            <h3>Є ПИТАННЯ?</h3>
-            <p>Залиште заявку на консультацію з фахівцем або зателефонуйте нам <span>(050) 313 55 12</span></p>
-            <button className='consultation'>Отримати консультацію</button>
+        <h2 className='title'>Каталог послуг</h2>
+        <div className='line' />
+        <section className='content_item'>
+          <article>
+            <img src='#' alt='img4' />
+            <h3>Ремонт гідрообладнання</h3>
+            <button className='catalog'>Каталог послуг</button>
           </article>
-          <article className='contacts'>
-            <h3>КОНТАКТИ</h3>
-            <ul className='contacts_list'>
-              <li>
-                <p>Головний офіс</p>
-                <p>м.Житомир вул Промислова 12</p>
-              </li>
-              <li>
-                <p>Телефони офісу</p>
-                <p>050 313 55 12, 095 567 42 85</p>
-              </li>
-              <li>
-                <p>info@website.info</p>
-              </li>
-            </ul>
+          <article>
+            <img src='#' alt='img4' />
+            <h3>Ремонт гідрошлангів</h3>
+            <button className='catalog'>Каталог послуг</button>
+          </article>
+          <article>
+            <img src='#' alt='img4' />
+            <h3>Ремонт паливної апаратури </h3>
+            <button className='catalog'>Каталог послуг</button>
           </article>
         </section>
+        <div className='grand_auto'>
+          <img src='#' alt='logo' />
+          <div className='grand_info'>
+            <h2>Найнижчі ціни - найкраща якість</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitation</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+          </div>
+        </div>
       </div>
     )
   }
