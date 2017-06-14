@@ -7,6 +7,8 @@ import Header from './component/header/header.jsx'
 import Footer from './component/footer/footer.jsx'
 import AboutUs from './component/aboutUs/aboutUs.jsx'
 import Catalog from './component/catalog/catalog.jsx'
+import Blog from './component/blog/blog.jsx'
+import Contacts from './component/contacts/contacts.jsx'
 
 export default class App extends Component {
   render () {
@@ -19,6 +21,8 @@ export default class App extends Component {
         <Footer />
         <AboutUs />
         <Catalog />
+        <Blog />
+        <Contacts />
       </div>
     )
   }
