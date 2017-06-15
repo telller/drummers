@@ -9,6 +9,7 @@ import AboutUs from './component/aboutUs/aboutUs.jsx'
 import Catalog from './component/catalog/catalog.jsx'
 import Blog from './component/blog/blog.jsx'
 import Contacts from './component/contacts/contacts.jsx'
+import Product from './component/product/product.jsx'
 
 export default class App extends Component {
   render () {
@@ -23,6 +24,8 @@ export default class App extends Component {
         <Catalog />
         <Blog />
         <Contacts />
+        <Map />
+        <Product />
       </div>
     )
   }

@@ -49,7 +49,7 @@ export default class Blog extends Component {
         </div>
         <div className='shadow'>
           <div className='pic'>
-            <iframe className='video' width='600' height='300' src='https://www.youtube.com/embed/ZvUBGN4KoP0' frameBorder='0' allowFullFcreen />
+            <iframe className='video' width='600' height='300' src='https://www.youtube.com/embed/ZvUBGN4KoP0' frameBorder='0' allowFullScreen />
           </div>
           <div className='blog_item'>
             <div className='label'>Відео</div>

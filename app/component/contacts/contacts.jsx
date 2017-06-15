@@ -19,7 +19,7 @@ export default class Contacts extends Component {
                 <p>095 567 42 85</p>
               </li>
               <li>
-                <p>info@website.info</p>
+                <p><a className='owe_site' href='#'>info@website.info</a></p>
               </li>
             </ul>
           </div>
@@ -27,16 +27,13 @@ export default class Contacts extends Component {
             <h3>Зв'язатись з нами</h3>
             <p className='question'>Задайте нам питання, залиште повідомлення нижче</p>
             <div className='flex_input'>
-              <input className='short input' type='text' placeholder="  Ім'я" />
-              <input className='short' type='tel' placeholder='  Телефон' />
+              <input className='short input' type='text' required placeholder="  Ім'я" />
+              <input className='short' type='tel' required placeholder='  Телефон' />
             </div>
-            <p><input type='text' placeholder='  Тема' /></p>
-            <textarea placeholder=' Ваше повідомлення' />
+            <p><input type='text' required placeholder='  Тема' /></p>
+            <textarea required placeholder=' Ваше повідомлення' />
             <input type='submit' value='Відправити повідомленя' />
           </form>
-        </section>
-        <section className='google_map'>
-          <img src='#' alt='Google map' />
         </section>
       </div>
     )
