@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Header from './component/header/header.jsx'
 import './about.styl'
 
 export default class About extends Component {

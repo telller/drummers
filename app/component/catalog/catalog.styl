@@ -1,12 +1,13 @@
 #catalog
   margin 0 auto
-  max-width 768px
+  max-width 960px
   padding 50px 0
   *
     margin 0
     padding 0
 
   .title
+    font-size 30px
     padding 10px 0
     color #DE030E
 
@@ -24,7 +25,7 @@
       display flex
       flex-direction column
       align-items center
-      width 25%
+      width 27%
 
       .catalog
         width 120px
@@ -36,10 +37,16 @@
         border none
         margin-bottom 20px
         cursor pointer
+      .catalog:hover
+        background-color #c33
+      .catalog:active
+        background-color #900
+        outline none
+      .catalog:focus
+        outline none
 
       h3
-        display block
-        width 150px
+        font-size 26px
         text-align center
         padding 10px 0
 
@@ -47,6 +54,7 @@
         list-style none
 
         a
+          font-size 18px
           text-decoration none
           color #518ABE
 
@@ -58,7 +66,9 @@
     .grand_info
       padding 20px 0
       h2
+        font-size 40px
         padding 5px 0 0
         text-align center
       p
+        font-size 22px
         padding 5px 0

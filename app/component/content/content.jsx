@@ -70,7 +70,7 @@ export default class Content extends Component {
                 <p>050 313 55 12, 095 567 42 85</p>
               </li>
               <li>
-                <p>info@website.info</p>
+                <p><a className='our_site' href='#'>info@website.info</a></p>
               </li>
             </ul>
           </article>

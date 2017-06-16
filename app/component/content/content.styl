@@ -7,6 +7,7 @@
     padding 0
 
   .content_item
+    padding 50px 0
     display flex
     justify-content space-around
 
@@ -26,10 +27,16 @@
         border none
         margin-bottom 20px
         cursor pointer
+      .catalog:hover
+        background-color #c33
+      .catalog:active
+        background-color #900
+        outline none
+      .catalog:focus
+        outline none
 
       h3
-        display block
-        width 150px
+        font-size 26px
         text-align center
         padding 10px 0
 
@@ -37,6 +44,7 @@
         list-style none
 
         a
+          font-size 18px
           text-decoration none
           color #518ABE
 
@@ -45,7 +53,8 @@
 
       p
         text-align center
-        font-size 18px
+        color #666
+        font-size 22px
         padding-bottom 15px
 
         span
@@ -60,6 +69,13 @@
         color #fff
         font-size 12px
         cursor pointer
+      .consultation:hover
+        background-color #c33
+      .consultation:active
+        background-color #900
+        outline none
+      .consultation:focus
+        outline none
 
     .contacts
       width 35%
@@ -69,3 +85,13 @@
 
         li
           padding 5px 0 5px 20px
+          p
+            font-size 22px
+            color #666
+            .our_site
+              text-decoration none
+              color #999
+            .our_site:hover
+              color #39c
+            .our_site:active
+              color #666
