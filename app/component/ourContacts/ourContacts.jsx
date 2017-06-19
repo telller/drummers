@@ -27,11 +27,11 @@ export default class OurContacts extends Component {
             <h3>Зв'язатись з нами</h3>
             <p className='question'>Задайте нам питання, залиште повідомлення нижче</p>
             <div className='flex_input'>
-              <input className='short input' type='text' required placeholder="  Ім'я" />
-              <input className='short' type='tel' required placeholder='  Телефон' />
+              <input className='short input' type='text' required placeholder="Ім'я" />
+              <input className='short' type='tel' required placeholder='Телефон' />
             </div>
-            <p><input type='text' required placeholder='  Тема' /></p>
-            <textarea required placeholder=' Ваше повідомлення' />
+            <p><input type='text' required placeholder='Тема' /></p>
+            <textarea required placeholder='Ваше повідомлення' />
             <input type='submit' value='Відправити повідомленя' />
           </form>
         </section>

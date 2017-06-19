@@ -35,14 +35,14 @@ export default class Footer extends Component {
                 <p>050 313 55 12, 095 567 42 85</p>
               </li>
               <li>
-                <p>info@website.info</p>
+                <p><a href='#' className='our_site'>info@website.info</a></p>
               </li>
             </ul>
           </div>
         </div>
         <div className='sub_ftr'>
           <form className='controls' action=''>
-            <input type='text' required placeholder='   Введіть email, отримуйте новини' />
+            <input type='text' required placeholder='Введіть email, отримуйте новини' />
             <input type='submit' value='&#62;' />
           </form>
           <div className='social'>

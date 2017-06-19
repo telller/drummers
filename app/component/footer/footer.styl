@@ -25,15 +25,23 @@
           text-decoration none
 
         a:hover
-          color #3D77A5
+          color #39c
+        a:active
+          color #666
 
     .contact_list
       list-style none
       font-size 14px
       color #939395
-
       li
         padding 5px 0
+        .our_site
+          text-decoration none
+          color #999
+        .our_site:hover
+          color #39c
+        .our_site:active
+          color #666
 
     .titel
       text-transform uppercase
@@ -62,6 +70,11 @@
         height 30px
         background-color #7D7D7D
         cursor pointer
+      [type='submit']:hover
+        background-color #999
+      [type='submit']:active
+        background-color #c00
+        color #fff
 
     .social_list
       display flex
