@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router'
 import './footer.styl'
 
 export default class Footer extends Component {
@@ -13,14 +14,14 @@ export default class Footer extends Component {
           <div className='rubric'>
             <h4 className='titel'>Рубрики</h4>
             <ul className='rubric_list'>
-              <li><a href='#'>Гідравлічне обладнання</a></li>
-              <li><a href='#'>Металообробні станки</a></li>
-              <li><a href='#'>Автозапчастини</a></li>
-              <li><a href='#'>Ремонт гідроциліндрів</a></li>
-              <li><a href='#'>Ремонт гідрошлангів</a></li>
-              <li><a href='#'>Ремонт паливної арматури</a></li>
-              <li><a href='#'>Блог</a></li>
-              <li><a href='#'>Про нас</a></li>
+              <li><Link to='/catalogProduct'>Гідравлічне обладнання</Link></li>
+              <li><Link to='/catalogProduct'>Металообробні станки</Link></li>
+              <li><Link to='/catalogProduct'>Автозапчастини</Link></li>
+              <li><Link to='/catalogProduct'>Ремонт гідроциліндрів</Link></li>
+              <li><Link to='/catalogProduct'>Ремонт гідрошлангів</Link></li>
+              <li><Link to='/catalogProduct'>Ремонт паливної арматури</Link></li>
+              <li><Link to='/blog'>Блог</Link></li>
+              <li><Link to='/aboutUs'>Про нас</Link></li>
             </ul>
           </div>
           <div className='contact_ftr'>
@@ -42,8 +43,8 @@ export default class Footer extends Component {
         </div>
         <div className='sub_ftr'>
           <form className='controls' action=''>
-            <input type='text' required placeholder='Введіть email, отримуйте новини' />
-            <input type='submit' value='&#62;' />
+            <input className='controls_text' type='text' required placeholder='Введіть email, отримуйте новини' />
+            <input className='controls_submit' type='submit' value='&#62;' />
           </form>
           <div className='social'>
             <ul className='social_list'>
