@@ -8,17 +8,17 @@ export default class About extends Component {
       <div id='about'>
         <Carousel>
           <Carousel.Item>
-            <img height={500} alt='img1' src='../img/hw.jpg' />
+            <img height={500} alt='img1' src='./app/component/img/hw.jpg' />
           </Carousel.Item>
           <Carousel.Item>
-            <img width={900} height={500} alt='900x500' src='/assets/carousel.png' />
+            <img width={900} height={500} alt='900x500' src='./app/component/assets/carousel.png' />
             <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img width={900} height={500} alt='900x500' src='/assets/carousel.png' />
+            <img width={900} height={500} alt='900x500' src='./app/component/assets/carousel.png' />
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
