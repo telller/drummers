@@ -36,11 +36,11 @@ export default class Header extends Component {
             aria-labelledby='contained-modal-title'
             >
             <Modal.Header>
-              <Modal.Title id='contained-modal-title'>Зв'язатись з нами</Modal.Title>
+              <Modal.Title id='contained-modal-title'>Замовити зворотній дзвінок</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              <p className='question'>Залиште повідомлення нижче - ми вам зателефонуємо</p>
               <form action='#'>
-                <p className='question'>Задайте нам питання, залиште повідомлення нижче</p>
                 <div className='flex_input'>
                   <input className='short input' type='text' required placeholder="Ім'я" />
                   <input className='short' type='tel' required placeholder='Телефон' />
