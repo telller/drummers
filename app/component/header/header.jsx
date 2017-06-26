@@ -1,19 +1,27 @@
 import React, { Component } from 'react'
 import './header.styl'
 import {Link} from 'react-router'
-import {Modal, Button} from 'react-bootstrap'
+import {Modal} from 'react-bootstrap'
 
 export default class Header extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      show: false
+      showModal: false
     }
     this.handleModal = this.handleModal.bind(this)
+    this.close = this.close.bind(this)
   }
   handleModal () {
-    this.setState({show: !this.state.show})
+    this.setState({showModal: true})
   }
+  close () {
+    this.setState({showModal: false})
+  }
+  open () {
+    this.setState({showModal: true})
+  }
+  // <a href='#' className='toch_menu'>Меню</a>
   render () {
     return (
       <header id='header'>
@@ -29,13 +37,8 @@ export default class Header extends Component {
             </ul>
           </nav>
           <button className='cole' onClick={this.handleModal}>Замовити дзвінок</button>
-          <Modal
-            show={this.state.show}
-            onHide={close}
-            container={this}
-            aria-labelledby='contained-modal-title'
-            >
-            <Modal.Header>
+          <Modal show={this.state.showModal} onHide={this.close}>
+            <Modal.Header closeButton>
               <Modal.Title id='contained-modal-title'>Замовити зворотній дзвінок</Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -50,9 +53,7 @@ export default class Header extends Component {
                 <input type='submit' value='Відправити повідомленя' />
               </form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.handleModal}>Close</Button>
-            </Modal.Footer>
+            <Modal.Footer />
           </Modal>
           <ul className='contact'>
             <li className='contact_item'>050 313 55 12</li>

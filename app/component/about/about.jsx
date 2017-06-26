@@ -1,45 +1,35 @@
-import React, { Component } from 'react'
 import { Carousel } from 'react-bootstrap'
+import React, { Component } from 'react'
+import {Link} from 'react-router'
 import './about.styl'
 
 export default class About extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      interval: 0
+    }
+  }
   render () {
     return (
       <div id='about'>
-        <Carousel>
+        <Carousel interval={this.state.interval}>
           <Carousel.Item>
-            <img height={500} alt='img1' src='./app/component/img/hw.jpg' />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={900} height={500} alt='900x500' src='./app/component/assets/carousel.png' />
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img height={500} alt='img1' src='./app/component/img/c.jpg' />
+            <Carousel.Caption className='caption_item'>
+              <h1 className='caption_title'>Найнижча ціна - найкраща якість</h1>
+              <p className='caption_text'>на гідравлічне обладнання та металообробні станки в Україні</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img width={900} height={500} alt='900x500' src='./app/component/assets/carousel.png' />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
+            <img height={500} alt='img2' src='./app/component/img/cl.jpg' />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img height={500} alt='img3' src='./app/component/img/cl.jpg' />
           </Carousel.Item>
         </Carousel>
+        <Link to='/catalogProduct'><button className='catalog'>Каталог товарів</button></Link>
       </div>
     )
   }
 }
-
-// <section>
-//   <div className='title'>
-//     <h1>Найнижча ціна - найкраща якість</h1>
-//     <p>на гідравлічне обладнання та металообробні станки в Україні</p>
-//   </div>
-//   <button className='catalog'>Каталог товарів</button>
-//   <ul>
-//     <li><a className='check' href='#' /></li>
-//     <li><a className='check' href='#' /></li>
-//     <li><a className='check' href='#' /></li>
-//     <li><a className='check' href='#' /></li>
-//   </ul>
-// </section>

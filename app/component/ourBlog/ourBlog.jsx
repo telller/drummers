@@ -13,7 +13,7 @@ export default class OurBlog extends Component {
           </form>
         </div>
         <div className='blog_item shadow'>
-          <div className='label'>Поради</div>
+          <div className='labeles'>Поради</div>
           <p className='date'>20 травня</p>
           <h2>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
@@ -31,7 +31,7 @@ export default class OurBlog extends Component {
         <div className='shadow'>
           <div className='pic'><img src='#' alt='pic1' /></div>
           <div className='blog_item'>
-            <div className='label'>Огляд</div>
+            <div className='labeles'>Огляд</div>
             <p className='date'>26 травня</p>
             <h2>Гідравлічні клапани та їх різновиди</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
@@ -52,7 +52,7 @@ export default class OurBlog extends Component {
             <iframe className='video' width='600' height='300' src='https://www.youtube.com/embed/ZvUBGN4KoP0' frameBorder='0' allowFullScreen />
           </div>
           <div className='blog_item'>
-            <div className='label'>Відео</div>
+            <div className='labeles'>Відео</div>
             <p className='date'>10 травня</p>
             <h2>Вибираємо редуктор для гідравлічного насосу</h2>
             <div className='blog_link'>
@@ -65,7 +65,7 @@ export default class OurBlog extends Component {
           </div>
         </div>
         <div className='blog_item shadow'>
-          <div className='label'>Поради</div>
+          <div className='labeles'>Поради</div>
           <p className='date'>20 травня</p>
           <h2>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
