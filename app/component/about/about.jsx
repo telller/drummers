@@ -22,6 +22,9 @@ export default class About extends Component {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
+            <img height={500} alt='img3' src='./app/component/img/cl0.jpg' />
+          </Carousel.Item>
+          <Carousel.Item>
             <img height={500} alt='img2' src='./app/component/img/cl.jpg' />
           </Carousel.Item>
           <Carousel.Item>

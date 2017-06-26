@@ -2,7 +2,7 @@
   position relative
   .caption_item
     bottom 40%
-    width 49%
+    width 57%
     left 25%
 
   .caption_title
@@ -13,7 +13,7 @@
 
   .catalog
     position absolute
-    left 44%
+    left 41%
     bottom 17%
     width 180px
     height 44px
@@ -26,6 +26,16 @@
     box-shadow: 0px 10px 41px -9px rgba(0,0,0,0.75);
     color #000
 
+  @media screen and (min-width: 320px) and (max-width: 639px)
+    .caption_title
+      font-size 30px
+
+    .caption_text
+      display none
+
+    .catalog
+      display none
+
   @media screen and (min-width: 640px) and (max-width: 767px)
     .catalog
       left 38%
@@ -35,18 +45,18 @@
 
   @media screen and (min-width: 768px) and (max-width: 959px)
     .catalog
-      left 41%
+      left 39%
 
     .caption_title
       font-size 38px
 
   @media screen and (min-width: 960px) and (max-width: 1023px)
     .catalog
-      left 42%
+      left 39%
 
-  @media screen and (min-width: 1024px) and (max-width: 1125px)
-    .catalog
-      left 43%
+  // @media screen and (min-width: 1024px) and (max-width: 1125px)
+  //   .catalog
+  //     left 43%
 
   .catalog:active
     -webkit-box-shadow: inset 0px 0px 30px -9px rgba(0,0,0,0.52);

@@ -21,22 +21,23 @@ export default class Header extends Component {
   open () {
     this.setState({showModal: true})
   }
-  // <a href='#' className='toch_menu'>Меню</a>
   render () {
     return (
       <header id='header'>
         <div className='wrapper'>
-          <Link to='/' className='logo'><img className='logo' src='#' alt='Logo' /></Link>
-          <nav>
-            <ul className='menu'>
-              <li className='menu_item'><Link className='menu_link' to='/' activeClassName='active'>Головна</Link></li>
-              <li className='menu_item'><Link className='menu_link' to='/catalogProduct' activeClassName='active'>Каталог товарів</Link></li>
-              <li className='menu_item'><Link className='menu_link' to='/aboutUs' activeClassName='active'>Про нас</Link></li>
-              <li className='menu_item'><Link className='menu_link' to='/blog' activeClassName='active'>Блог</Link></li>
-              <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
-            </ul>
-          </nav>
-          <button className='cole' onClick={this.handleModal}>Замовити дзвінок</button>
+          <Link to='/' className='logo'><img className='logo' width={100} src='./app/component/img/Opuh.jpg' alt='Logo' /></Link>
+          <div className='conteiner'>
+            <nav>
+              <ul className='menu'>
+                <li className='menu_item'><Link className='menu_link' to='/' activeClassName='active'>Головна</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/catalogProduct' activeClassName='active'>Каталог товарів</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/aboutUs' activeClassName='active'>Про нас</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/blog' activeClassName='active'>Блог</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
+              </ul>
+            </nav>
+            <button className='cole' onClick={this.handleModal}>Замовити дзвінок</button>
+          </div>
           <Modal show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
               <Modal.Title id='contained-modal-title'>Замовити зворотній дзвінок</Modal.Title>
