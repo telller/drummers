@@ -15,10 +15,10 @@ export default class OurBlog extends Component {
         <div className='blog_item shadow'>
           <div className='labeles'>Поради</div>
           <p className='date'>20 травня</p>
-          <h2>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
+          <h2 className='blog_title'>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
           <div className='blog_link'>
             <a className='read' href='#'>Читати далі</a>
             <div className='hashtag'>
@@ -33,10 +33,10 @@ export default class OurBlog extends Component {
           <div className='blog_item'>
             <div className='labeles'>Огляд</div>
             <p className='date'>26 травня</p>
-            <h2>Гідравлічні клапани та їх різновиди</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
+            <h2 className='blog_title'>Гідравлічні клапани та їх різновиди</h2>
+            <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
+            <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
             <div className='blog_link'>
               <a className='read' href='#'>Читати далі</a>
               <div className='hashtag'>
@@ -54,7 +54,7 @@ export default class OurBlog extends Component {
           <div className='blog_item'>
             <div className='labeles'>Відео</div>
             <p className='date'>10 травня</p>
-            <h2>Вибираємо редуктор для гідравлічного насосу</h2>
+            <h2 className='blog_title'>Вибираємо редуктор для гідравлічного насосу</h2>
             <div className='blog_link'>
               <div className='hashtag'>
                 <a href='#'>#гідравліка</a>
@@ -67,10 +67,10 @@ export default class OurBlog extends Component {
         <div className='blog_item shadow'>
           <div className='labeles'>Поради</div>
           <p className='date'>20 травня</p>
-          <h2>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
+          <h2 className='blog_title'>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
           <div className='blog_link'>
             <a className='read' href='#'>Читати далі</a>
             <div className='hashtag'>

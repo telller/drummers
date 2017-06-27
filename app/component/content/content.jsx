@@ -5,10 +5,10 @@ export default class Content extends Component {
   render () {
     return (
       <div id='content'>
-        <section className='content_item top'>
+        <section className='content_item'>
           <article className='goods'>
             <img src='#' alt='img1' />
-            <h3>Гідравлічне обладнання</h3>
+            <h3 className='goods_title'>Гідравлічне обладнання</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
               <li><a href='#'>гідравлічні насоси</a></li>
@@ -25,7 +25,7 @@ export default class Content extends Component {
           </article>
           <article className='goods'>
             <img src='#' alt='img2' />
-            <h3>Металообробні станки</h3>
+            <h3 className='goods_title'>Металообробні станки</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
               <li><a href='#'>станки DELLA</a></li>
@@ -39,7 +39,7 @@ export default class Content extends Component {
           </article>
           <article className='goods'>
             <img src='#' alt='img3' />
-            <h3>Запчастини для авто</h3>
+            <h3 className='goods_title'>Запчастини для авто</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
               <li><a href='#'>запчастини до двигуна</a></li>

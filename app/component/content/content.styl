@@ -7,15 +7,15 @@
     padding 0
 
   .content_item
-    padding 50px 0
+    padding 5% 0
     display flex
+    flex-wrap wrap
     justify-content space-around
 
     article
       display flex
       flex-direction column
       align-items center
-      width 25%
 
       .catalog
         width 120px
@@ -35,7 +35,8 @@
       .catalog:focus
         outline none
 
-      h3
+      .goods_title
+        width 245px
         font-size 26px
         text-align center
         padding 10px 0
@@ -49,7 +50,7 @@
           color #518ABE
 
     .question
-      width 40%
+      width 43%
 
       p
         text-align center
@@ -78,7 +79,7 @@
         outline none
 
     .contacts
-      width 40%
+      width 49%
 
       .contacts_list
         list-style none
@@ -95,3 +96,28 @@
               color #39c
             .our_site:active
               color #666
+
+
+    @media screen and (min-width: 320px) and (max-width: 1023px)
+      .question
+        font-size 19px
+      .contacts
+        font-size 19px
+      .content_item
+        padding 0
+
+    @media screen and (min-width: 320px) and (max-width: 768px)
+      .question
+        width 63%
+        padding-bottom 40px
+
+    @media screen and (min-width: 320px) and (max-width: 639px)
+
+      .goods
+        padding-bottom 50px
+
+      .question
+        width 90%
+
+      .contacts
+        width 100%
