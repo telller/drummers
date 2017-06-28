@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 import './content.styl'
+import {Modal} from 'react-bootstrap'
 
 export default class Content extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      showModal: false
+    }
+    this.handleModal = this.handleModal.bind(this)
+    this.close = this.close.bind(this)
+  }
+  handleModal () {
+    this.setState({showModal: true})
+  }
+  close () {
+    this.setState({showModal: false})
+  }
+  open () {
+    this.setState({showModal: true})
+  }
   render () {
     return (
       <div id='content'>
@@ -53,12 +71,12 @@ export default class Content extends Component {
           </article>
         </section>
         <section className='content_item bottom'>
-          <article className='question'>
+          <article className='question goods'>
             <h3>Є ПИТАННЯ?</h3>
             <p>Залиште заявку на консультацію з фахівцем або зателефонуйте нам <span>(050) 313 55 12</span></p>
-            <button className='consultation'>Отримати консультацію</button>
+            <button className='consultation' onClick={this.handleModal}>Отримати консультацію</button>
           </article>
-          <article className='contacts'>
+          <article className='contacts goods'>
             <h3>КОНТАКТИ</h3>
             <ul className='contacts_list'>
               <li>
@@ -75,6 +93,24 @@ export default class Content extends Component {
             </ul>
           </article>
         </section>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title id='contained-modal-title'>Замовити зворотній дзвінок</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p className='question'>Залиште повідомлення нижче - ми вам зателефонуємо</p>
+            <form action='#'>
+              <div className='flex_input'>
+                <input className='short input' type='text' required placeholder="Ім'я" />
+                <input className='short' type='tel' required placeholder='Телефон' />
+              </div>
+              <p><input type='text' required placeholder='Тема' /></p>
+              <textarea required placeholder='Ваше повідомлення' />
+              <input type='submit' value='Відправити повідомленя' />
+            </form>
+          </Modal.Body>
+          <Modal.Footer />
+        </Modal>
       </div>
     )
   }
