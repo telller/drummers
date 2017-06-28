@@ -1,9 +1,10 @@
 import { Carousel } from 'react-bootstrap'
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router'
 import './about.styl'
 
-export default class About extends Component {
+class About extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -36,3 +37,11 @@ export default class About extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(About)

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import './header.styl'
-import {Link} from 'react-router'
 import {Modal} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {Link} from 'react-router'
+import './header.styl'
 
-export default class Header extends Component {
+class Header extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -25,7 +26,7 @@ export default class Header extends Component {
     return (
       <header id='header'>
         <div className='wrapper'>
-          <Link to='/' className='logo'><img className='logo' width={100} src='./app/component/img/Opuh.jpg' alt='Logo' /></Link>
+          <Link to='/' className='logo'><img className='logo' width={100} src={this.props.main.home_media_logo.url} alt='Logo' /></Link>
           <div className='conteiner'>
             <nav>
               <ul className='menu'>
@@ -65,3 +66,11 @@ export default class Header extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
