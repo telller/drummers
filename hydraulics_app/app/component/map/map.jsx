@@ -24,13 +24,14 @@ class Map extends Component {
     super(props)
     this.state = {
       center: {lat: 50.24, lng: 28.74},
-      zoom: 13
+      zoom: 13,
+      key: 'AIzaSyAnKaOR-VousyT9cpPaq8NiJpGpvM5fQJM'
     }
   }
   render () {
     return (
       <div id='map'>
-        <GoogleMapReact defaultCenter={this.state.center} defaultZoom={this.state.zoom}>
+        <GoogleMapReact defaultCenter={this.state.center} defaultZoom={this.state.zoom} apiKey={this.state.key}>
           <AnyReactComponent
             lat={50.237100}
             lng={28.736621}
