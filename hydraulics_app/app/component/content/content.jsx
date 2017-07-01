@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import './content.styl'
 import {Modal} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import './content.styl'
 
-export default class Content extends Component {
+class Content extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -25,7 +26,7 @@ export default class Content extends Component {
       <div id='content'>
         <section className='content_item'>
           <article className='goods'>
-            <img src='#' alt='img1' />
+            <img alt='img1' width={245} src={this.props.main.media_catalog1.url} />
             <h3 className='goods_title'>Гідравлічне обладнання</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -42,7 +43,7 @@ export default class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img src='#' alt='img2' />
+            <img alt='img2' width={245} src={this.props.main.media_catalog2.url} />
             <h3 className='goods_title'>Металообробні станки</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -56,7 +57,7 @@ export default class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img src='#' alt='img3' />
+            <img alt='img3' width={245} src={this.props.main.media_catalog3.url} />
             <h3 className='goods_title'>Запчастини для авто</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -115,3 +116,10 @@ export default class Content extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Content)

@@ -26,7 +26,7 @@ class Header extends Component {
     return (
       <header id='header'>
         <div className='wrapper'>
-          <Link to='/' className='logo'><img className='logo' width={100} src='http://hydraulics/wp-content/uploads/2017/06/Opuh-1.jpg' alt='Logo' /></Link>
+          <Link to='/' className='logo'><img className='logo' width={100} src={this.props.main.media_logo.url} alt='Logo' /></Link>
           <div className='conteiner'>
             <nav>
               <ul className='menu'>

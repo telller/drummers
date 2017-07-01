@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import './ourBlog.styl'
 
-export default class OurBlog extends Component {
+class OurBlog extends Component {
   render () {
     return (
       <div id='ourBlog'>
@@ -29,7 +30,7 @@ export default class OurBlog extends Component {
           </div>
         </div>
         <div className='shadow'>
-          <div className='pic'><img src='#' alt='pic1' /></div>
+          <div><img width={'100%'} src={this.props.main.media_blog.url} alt='pic1' /></div>
           <div className='blog_item'>
             <div className='labeles'>Огляд</div>
             <p className='date'>26 травня</p>
@@ -48,8 +49,8 @@ export default class OurBlog extends Component {
           </div>
         </div>
         <div className='shadow'>
-          <div className='pic'>
-            <iframe className='video' width='600' height='300' src='https://www.youtube.com/embed/ZvUBGN4KoP0' frameBorder='0' allowFullScreen />
+          <div>
+            <iframe className='video' width='100%' height='400' src='https://www.youtube.com/embed/ZvUBGN4KoP0' frameBorder='0' allowFullScreen />
           </div>
           <div className='blog_item'>
             <div className='labeles'>Відео</div>
@@ -96,3 +97,10 @@ export default class OurBlog extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(OurBlog)

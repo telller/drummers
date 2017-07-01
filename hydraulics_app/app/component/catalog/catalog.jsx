@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import './catalog.styl'
 
-export default class Catalog extends Component {
+class Catalog extends Component {
   render () {
     return (
       <div id='catalog'>
@@ -9,7 +10,7 @@ export default class Catalog extends Component {
         <div className='line' />
         <section className='content_item top'>
           <article className='goods'>
-            <img src='#' alt='img1' />
+            <img alt='img1' width={245} src={this.props.main.media_catalog1.url} />
             <h3>Гідравлічне обладнання</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -26,7 +27,7 @@ export default class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img src='#' alt='img2' />
+            <img alt='img2' width={245} src={this.props.main.media_catalog2.url} />
             <h3>Металообробні станки</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -40,7 +41,7 @@ export default class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img src='#' alt='img3' />
+            <img alt='img3' width={245} src={this.props.main.media_catalog3.url} />
             <h3>Запчастини для авто</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -58,23 +59,23 @@ export default class Catalog extends Component {
         <div className='line' />
         <section className='content_item'>
           <article>
-            <img src='#' alt='img4' />
+            <img alt='img4' width={245} src={this.props.main.media_catalog4.url} />
             <h3>Ремонт гідрообладнання</h3>
             <button className='catalog'>Каталог послуг</button>
           </article>
           <article>
-            <img src='#' alt='img4' />
+            <img alt='img5' width={245} src={this.props.main.media_catalog5.url} />
             <h3>Ремонт гідрошлангів</h3>
             <button className='catalog'>Каталог послуг</button>
           </article>
           <article>
-            <img src='#' alt='img4' />
+            <img alt='img6' width={245} src={this.props.main.media_catalog6.url} />
             <h3>Ремонт паливної апаратури </h3>
             <button className='catalog'>Каталог послуг</button>
           </article>
         </section>
         <div className='grand_auto'>
-          <img src='#' alt='logo' />
+          <img width={150} src={this.props.main.media_logo.url} alt='logo' />
           <div className='grand_info'>
             <h2>Найнижчі ціни - найкраща якість</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitation</p>
@@ -86,3 +87,10 @@ export default class Catalog extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Catalog)

@@ -217,1017 +217,144 @@
     $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-drummers' );
     Redux::setHelpSidebar( $opt_name, $content );
 
-
-    /*
-     * <--- END HELP TABS
-     */
-
-
-    /*
-     *
-     * ---> START SECTIONS
-     *
-     */
-
-    /*
-
-        As of Redux 3.5+, there is an extensive API. This API can be used in a mix/match mode allowing for
-
-
-     */
-
-    // -> START SECTIONS
+    // -> START SECTIONS MEDIA
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Home', 'redux-framework-drummers' ),
+        'title'      => __( 'Media', 'redux-framework-drummers' ),
         'desc'       => __( '', 'redux-framework-drummers' ),
         'icon'  => 'el el-home-alt',
         'id'         => 'home',
         'fields'     => array(
             array(
-                'id'    => 'home_info',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el el-home-alt',
-                'title' => __( 'Section for the home page configuration', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'home_media_logo',
+                'id'       => 'media_logo',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
+                'title'    => __( 'Logo', 'redux-framework-drummers' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                 'desc'     => __( '', 'redux-framework-drummers' ),
                 'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
             array(
-                'id'          => 'home_top_slides',
-                'type'        => 'slides',
-                'title'       => __( 'Slides Options', 'redux-redux-framework-drummers' ),
-                'subtitle'    => __( 'Unlimited slides with drag and drop sortings. Slides Options for the top slider.', 'redux-framework-demo' ),
-                'desc'        => __( '', 'redux-framework-demo' ),
-                'placeholder' => array(
-                    'title'       => __( 'This is a title', 'redux-framework-drummers' ),
-                    'description' => __( 'Description Here', 'redux-framework-drummers' ),
-                    'url'         => __( 'Give us a link!', 'redux-framework-drummers' ),
-                )
-            ),
-            array(
-                'id'       => 'home_button_explore_more',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for button "Explore more".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Explore more',
-            ),
-            array(
-                'id'       => 'home_media_photo',
+                'id'       => 'media_logo1',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
+                'title'    => __( 'Logo', 'redux-framework-drummers' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change left photo.', 'redux-framework-drummers' ),
+                'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
             array(
-                'id'       => 'home_title_start_here',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Start Here".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Start here',
-            ),
-            array(
-                'id'       => 'home_text_start_here',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for "Start Here" section.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'home_button_short_intro',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Short intro".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Short intro',
-            ),
-            array(
-                'id'=>'home_intro_audio',
-                'type' => 'media',
-                'title' => __('Media field', 'redux-framework-drummers'),
-                'url' => true,
-                'mode' => false,
-                'readonly' => false,
-                'preview' => false,
-                'desc'=> __('Audio for the intro section', 'redux-framework-drummers'),
-                'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
-            ),
-            array(
-                'id'       => 'home_title_latest_posts',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Latest posts".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Latest posts',
-            ),
-            array(
-                'id'       => 'home_button_filter_post',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Filter posts".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Filter posts',
-            ),
-            array(
-                'id'       => 'home_posts_filters',
-                'type'     => 'multi_text',
-                'title'    => __( 'Posts filters', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Posts filters', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'home_button_read_blog',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Read blog".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Read blog',
-            ),
-            array(
-                'id'       => 'home_title_latest_podcasts',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Latest podcasts".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Latest podcasts',
-            ),
-            array(
-                'id'       => 'home_button_explore_podcasts',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Explore podcasts".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Explore podcasts',
-            ),
-            array(
-                'id'       => 'home_info_message',
-                'type'     => 'textarea',
-                'title'    => __( 'Textarea Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Textarea Option for the section "Information Message".', 'redux-framework-demo' ),
-                'desc'     => __( '', 'redux-framework-demo' ),
-                'default'  => "“My work (and this site) is devoted to sharing ideas, tools and resources, that will help you become a better drummer. You don´t have to get it perfect. You just have to get it going.”",
-            ),
-            array(
-                'id'       => 'home_button_discover',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "DISCOVER MORE"', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'DISCOVER MORE',
-            ),
-            array(
-                'id'       => 'home_title_featured_products',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Featured products"', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Featured products',
-            ),
-            array(
-                'id'          => 'home_bottom_slides',
-                'type'        => 'slides',
-                'title'       => __( 'Slides Options', 'redux-redux-framework-drummers' ),
-                'subtitle'    => __( 'Unlimited slides with drag and drop sortings. Slides Options for the bottom slider.', 'redux-framework-demo' ),
-                'desc'        => __( '', 'redux-framework-demo' ),
-                'placeholder' => array(
-                    'title'       => __( 'This is a title', 'redux-framework-drummers' ),
-                    'description' => __( 'Description Here', 'redux-framework-drummers' ),
-                    'url'         => __( 'Give us a link!', 'redux-framework-drummers' ),
-                )
-            ),
-        )
-    ) );
-    // -> END HOME SECTION
-
-    // -> START BLOG SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Blog', 'redux-framework-drummers' ),
-        'desc'       => __( '', 'redux-framework-drummers' ),
-        'icon'  => 'el el-blogger',
-        'id'         => 'blog',
-        'fields'     => array(
-            array(
-                'id'    => 'blog_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-blogger',
-                'title' => __( 'Section for the blog page configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'blog_media_logo',
+                'id'       => 'media_carousel1',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
+                'title'    => __( 'carousel_images', 'redux-framework-drummers' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change top logo', 'redux-framework-drummers' ),
+                'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
             array(
-                'id'       => 'blog_text_brief',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the brief text.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => '"My belief in helping you learn is simple: Share the truth, be honest, work hard,
-and lead by example. That’s what I’m all about, and that’s what this blog is all about."',
-            ),
-            array(
-                'id'       => 'blog_button_filter_content',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Filter content".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Filter content',
-            ),
-            array(
-                'id'       => 'blog_filter_content',
-                'type'     => 'multi_text',
-                'title'    => __( 'Blog filters', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Blog filters', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'blog_search_placeholder',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the search placeholder', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Find anything you want to know by the keyword search',
-            ),
-            array(
-                'id'       => 'blog_button_search',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Search', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Search',
-            ),
-            array(
-                'id'       => 'blog_button_load_more',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Load more"', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Load more',
-            ),
-        )
-    ) );
-    // -> END HOME SECTION
-
-    // -> START PRODUCTS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Products', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'icon'  => 'el el-shopping-cart-sign',
-        'id'         => 'products',
-        'subsection' => false,
-        'fields'     => array(
-            array(
-                'id'    => 'products_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-shopping-cart-sign',
-                'title' => __( 'Section for the products page configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'products_media_logo',
+                'id'       => 'media_carousel2',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
+                'title'    => __( 'carousel_images', 'redux-framework-drummers' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change top logo.', 'redux-framework-drummers' ),
+                'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
             array(
-                'id'       => 'products_text_brief',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the brief information.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'My blog posts are not enough for you and you want a concentrated
-dose of know-how? Take a look at my shop!',
-            ),
-            array(
-                'id'       => 'products_button_checkout',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Checkout now".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Checkout now',
-            ),
-            array(
-                'id'       => 'products_button_open_filters',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Open filters".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Open filters',
-            ),
-            array(
-                'id'       => 'products_filters',
-                'type'     => 'multi_text',
-                'title'    => __( 'Products filters', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Products filters', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'products_button_more_coming',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "More coming soon".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'More coming soon',
-            ),
-        )
-    ) );
-    // -> END PRODUCTS SECTION
-
-    // -> START PODCASTS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Podcasts', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'icon'  => 'el el-podcast',
-        'id'         => 'podcasts',
-        'fields'     => array(
-            array(
-                'id'    => 'podcasts_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-podcast',
-                'title' => __( 'Section for the podcasts page configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'podcasts_media_logo',
+                'id'       => 'media_carousel3',
                 'type'     => 'media',
                 'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
+                'title'    => __( 'carousel_images', 'redux-framework-drummers' ),
                 'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change top logo.', 'redux-framework-drummers' ),
+                'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
             ),
             array(
-                'id'       => 'podcasts_text_brief',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the brief information.', 'redux-framework-drummers' ),
+                'id'       => 'media_carousel4',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'carousel_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Welcome to the Drummersblog Podcast. Weekly interviews,
-strategy and advice for reaching your goals as a drummer.',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_button_filter_podcasts',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Filter podcasts".', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog1',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Filter podcasts',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_filters',
-                'type'     => 'multi_text',
-                'title'    => __( 'Podcasts filters', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Podcasts filters', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog2',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_button_ask_ole',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Ask Ole".', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog3',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Ask Ole',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_search_placeholder',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the search placeholder', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog4',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Find relevant podcasts',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_button_search',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Search".', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog5',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Search',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_title_latest_podcasts',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field  for the title "Latest podcasts".', 'redux-framework-drummers' ),
+                'id'       => 'media_catalog6',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'catalog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Latest podcasts',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             ),
             array(
-                'id'       => 'podcasts_button_load_more',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Load more".', 'redux-framework-drummers' ),
+                'id'       => 'media_blog',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'blog_images', 'redux-framework-drummers' ),
+                'compiler' => 'true',
                 'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Load more',
+                'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             )
+
         )
-    ) );
-    // -> END PODCASTS SECTION
-
-    // -> START MY STORY SECTION
-
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'My story', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'icon'  => 'el el-smiley-alt',
-        'id'         => 'my_story',
-        'fields'     => array(
-            array(
-                'id'    => 'my_story_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-smiley-alt',
-                'title' => __( 'Section for the my story page configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'my_story_media_logo',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
-                'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change top logo.', 'redux-framework-drummers' ),
-                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
-            ),
-            array(
-                'id'       => 'my_story_title_who',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Who is OLE?".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Who is OLE?',
-            ),
-            array(
-                'id'       => 'my_story_header_text',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for section "Who is OLE?".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'my_story_title_start',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "How Drummersblog Began".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'How Drummersblog Began',
-            ),
-            array(
-                'id'       => 'my_story_text_start',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for the section "How Drummersblog Began".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'my_story_info_message',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the information message.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'My work (and this site) is devoted to sharing ideas, tools and resources, that will help you become a better drummer. You don´t have to get it perfect. You just have to get it going.',
-            ),
-            array(
-                'id'       => 'my_story_title_partners',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "My Partners".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'My Partners',
-            ),
-            array(
-                'id'       => 'my_story_content_partners',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option for content', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for content', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'          => 'my_story_partners',
-                'type'        => 'slides',
-                'title'       => __( 'Partners Options', 'redux-redux-framework-drummers' ),
-                'subtitle'    => __( 'Options for the partners section.', 'redux-framework-demo' ),
-                'desc'        => __( '', 'redux-framework-demo' ),
-                'placeholder' => array(
-                    'title'       => __( 'This is a title', 'redux-framework-drummers' ),
-                    'description' => __( 'Description Here', 'redux-framework-drummers' ),
-                    'url'         => __( 'Give us a link!', 'redux-framework-drummers' ),
-                )
-            ),
-        )
-    ) );
-    // -> END MY STORY SECTION
-
-    // -> START CONTACT SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Contact', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'icon'  => 'el el-envelope-alt',
-        'id'         => 'contact',
-        'fields'     => array(
-            array(
-                'id'    => 'contact_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-envelope-alt',
-                'title' => __( 'Section for the contact page configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'contact_media_logo',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'Media w/ URL', 'redux-framework-drummers' ),
-                'compiler' => 'true',
-                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Uploader to change top logo.', 'redux-framework-drummers' ),
-                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-                //'hint'      => array(
-                //    'title'     => 'Hint Title',
-                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                //)
-            ),
-            array(
-                'id'       => 'contact_button_social1',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the social button - 1', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Social - 1',
-            ),
-            array(
-                'id'       => 'opt_contact_url_social1',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the url social - 1', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Url social - 1',
-            ),
-            array(
-                'id'       => 'contact_button_social2',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the social button - 2', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Social - 2',
-            ),
-            array(
-                'id'       => 'opt_contact_url_social2',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the url social - 2', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Url social - 2',
-            ),
-            array(
-                'id'       => 'contact_button_social3',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the social button - 3', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Social - 3',
-            ),
-            array(
-                'id'       => 'opt_contact_url_social3',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the url social - 3', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Url social - 3',
-            ),
-            array(
-                'id'       => 'contact_button_social4',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the social button - 4', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Social - 4',
-            ),
-            array(
-                'id'       => 'opt_contact_url_social4',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the url social - 4', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Url social - 4',
-            ),
-            array(
-                'id'       => 'contact_title_contact',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Contact".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Contact',
-            ),
-            array(
-                'id'       => 'contact_text_contact',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the section "contact".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Let´s get to know each other beter. I would love to hear from you.t',
-            ),
-            array(
-                'id'       => 'contact_placeholder_name',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Your name".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Your name',
-            ),
-            array(
-                'id'       => 'contact_placeholder_email',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Your email".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Your email',
-            ),
-            array(
-                'id'       => 'contact_placeholder_subject',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Your subject".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Your subject',
-            ),
-            array(
-                'id'       => 'contact_your_message',
-                'type'     => 'textarea',
-                'title'    => __( 'Textarea Option', 'redux-framework-demo' ),
-                'subtitle' => __( 'Textarea Option for the placeholder "Your message".', 'redux-framework-demo' ),
-                'desc'     => __( '', 'redux-framework-demo' ),
-                'default'  => 'Your message',
-            ),
-            array(
-                'id'       => 'contact_button_send',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Send".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Send',
-            )
-        )
-    ) );
-    // -> END MY CONTACT SECTION
-
-    // -> START ADDITIONAL OPTIONS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Additional Options', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'icon'  => 'el el el-cog-alt',
-        'id'         => 'additional',
-        'fields'     => array(
-            array(
-                'id'    => 'additional_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-cog-alt',
-                'title' => __( 'Section for additional configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            )
-        )
-    ) );
-    // -> END MY ADDITIONAL SECTION
-
-    // -> START MENU OPTIONS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Menu', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'subsection' => true,
-        'icon'  => 'el el-lines',
-        'id'         => 'menu-subsection',
-        'fields'     => array(
-            array(
-                'id'    => 'menu_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-lines',
-                'title' => __( 'Section for the menu configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'    => 'menu_info_critical1',
-                'type'  => 'info',
-                'style' => 'critical',
-                'title' => __( 'Top menu configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'menu_top_items',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for "Top Menu".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'    => 'menu_info_critical2',
-                'type'  => 'info',
-                'style' => 'critical',
-                'title' => __( 'Bottom menu configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'menu_bottom_items',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for "Bottom Menu".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'menu_icon_facebook',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon "Facebook".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Facebook',
-            ),
-            array(
-                'id'       => 'menu_icon_facebook_url',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon url "Facebook".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'https://www.facebook.com/',
-            ),
-            array(
-                'id'       => 'menu_icon_twitter',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon "Twitter".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Twitter',
-            ),
-            array(
-                'id'       => 'menu_icon_twitter_url',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon url "Twitter".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'https://twitter.com/',
-            ),
-            array(
-                'id'       => 'menu_icon_instagram',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon "Instagram".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Instagram',
-            ),
-            array(
-                'id'       => 'menu_icon_instagram_url',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the icon url "Instagram".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'https://www.instagram.com/',
-            ),
-        )
-    ) );
-    // -> END MY MENU SECTION
-
-    // -> START ASK OLE OPTIONS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Ask Ole', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'subsection' => true,
-        'icon'  => 'el el-question-sign',
-        'id'         => 'ask-subsection',
-        'fields'     => array(
-            array(
-                'id'    => 'ask_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-question-sign',
-                'title' => __( 'Section for the Ask Ole section configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'ask_title_ask',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Ask Ole".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Ask Ole',
-            ),
-            array(
-                'id'       => 'ask_text_ask',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option for section "Ask Ole".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-            array(
-                'id'       => 'ask_button_record',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Record your message".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Record your message',
-            ),
-            array(
-                'id'       => 'ask_button_remove',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Remove".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Remove',
-            ),
-            array(
-                'id'       => 'ask_button_send',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Send".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Send',
-            ),
-            array(
-                'id'       => 'ask_placeholder_email',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Email".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Email*',
-            ),
-            array(
-                'id'       => 'ask_placeholder_additional',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Additional Details".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Additional Details',
-            ),
-        )
-    ) );
-    // -> END ASK OLE SECTION
-
-    // -> START NEWSLETTER OPTIONS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Newsletter', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'subsection' => true,
-        'icon'  => 'el el-info-circle',
-        'id'         => 'newsletter-subsection',
-        'fields'     => array(
-            array(
-                'id'    => 'newsletter_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-info-circle',
-                'title' => __( 'Section for the Newsletter section configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'newsletter_title_newsletter',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the title "Newsletter".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Newsletter',
-            ),
-            array(
-                'id'       => 'newsletter_text_newsletter',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the section "Newsletter".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Newsletter text here...',
-            ),
-            array(
-                'id'       => 'newsletter_placeholder_email',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the placeholder "Your email".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Your email',
-            ),
-            array(
-                'id'       => 'newsletter_button_sing_up',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the button "Sing Up".', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Sing Up',
-            ),
-        )
-    ) );
-
-    // -> END NEWSLETTER SECTION
-
-    // -> START FOOTER SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Footer', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'subsection' => true,
-        'icon'  => 'el el-website-alt',
-        'id'         => 'footer-subsection',
-        'fields'     => array(
-            array(
-                'id'    => 'footer_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-website-alt',
-                'title' => __( 'Section for the Footer section configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'footer_text',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Text Field for the footer.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-                'default'  => 'Text for the footer here',
-            ),
-        )
-    ) );
-    // -> START SOCIAL ICONS SECTION
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Social icons', 'redux-framework-drummers' ),
-        'desc'       => __( '' ),
-        'subsection' => true,
-        'icon'  => 'el el-slideshare',
-        'id'         => 'social-subsection',
-        'fields'     => array(
-            array(
-                'id'    => 'social_info_success',
-                'type'  => 'info',
-                'style' => 'success',
-                'icon'  => 'el el-slideshare',
-                'title' => __( 'Section for the social icons configuration.', 'redux-framework-drummers' ),
-                'desc'  => __( '', 'redux-framework-demo' )
-            ),
-            array(
-                'id'       => 'social_icons_link',
-                'type'     => 'multi_text',
-                'title'    => __( 'Multi Text Option', 'redux-framework-drummers' ),
-                'subtitle' => __( 'Multi Text Option to for social icons.', 'redux-framework-drummers' ),
-                'desc'     => __( '', 'redux-framework-drummers' ),
-            ),
-        )
-    ) );
-
-    /*------------------------*/
-
-    /*
-     * <--- END SECTIONS
-     */
+    )
+  );

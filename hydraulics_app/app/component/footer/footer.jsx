@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router'
 import './footer.styl'
 
-export default class Footer extends Component {
+class Footer extends Component {
   render () {
     return (
       <footer id='footer'>
         <div className='main_ftr'>
           <div className='logo_ftr'>
-            <img src='#' alt='logo' />
+            <img className='logo_img' alt='logo' width={100} src={this.props.main.media_logo1.url} />
             <p>продаж гідравлічного обладнання, металообробних станків, автозапчастин, ремонт гідроциліндрів, гідрошлангів, паливної арматури та ін.</p>
           </div>
           <div className='rubric'>
@@ -60,3 +61,10 @@ export default class Footer extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Footer)
