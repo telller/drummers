@@ -9,8 +9,8 @@ class OurBlog extends Component {
         <div className='flex'>
           <h1>Блог</h1>
           <form>
-            <input type='search' placeholder='   Пошук' />
-            <button className='search' />
+            <input type='search' placeholder='Пошук' />
+            <button className='search'><img className='searh_btn' height={20} src={this.props.main.media_search.url} /></button>
           </form>
         </div>
         <div className='blog_item shadow'>

@@ -1,11 +1,7 @@
 #root {
   overflow: hidden;
   min-width: 480px;
-  max-width: 1024px;
   margin: 0 auto;
-  -webkit-box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.79);
-  -moz-box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.79);
-  box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.79);
   font-family: 'Open Sans', Arial, sans-serif;
 }
 #header {
@@ -24,7 +20,7 @@
   align-items: center;
   width: 100%;
   min-width: 480px;
-  max-width: 960px;
+  max-width: 1024px;
 }
 * .conteiner {
   display: flex;
@@ -67,8 +63,8 @@
   color: #fff;
 }
 * .cole {
-  width: 150px;
-  min-width: 150px;
+  width: 180px;
+  min-width: 180px;
   height: 30px;
   background-color: #de030e;
   border-radius: 17px;
@@ -86,16 +82,15 @@
 * .cole:focus {
   outline: none;
 }
+* .phone {
+  padding-right: 8px;
+}
 * .contact {
   display: inline-block;
   list-style: none;
-  width: 105px;
-  padding: 15px 0 15px 10px;
+  width: 121px;
+  padding: 7px 0 7px 7px;
   margin: 0;
-}
-* .contact_item {
-  font-size: 14px;
-  padding: 5px 0;
 }
 * .modal-container {
   position: relative;
@@ -115,7 +110,7 @@
   padding: 30px 40px 0;
 }
 .modal-content .modal-body {
-  padding: 0 15px 15px;
+  padding: 0 15px 31px;
 }
 .modal-content .modal-body form {
   padding-top: 25px;
@@ -155,6 +150,7 @@
 }
 .modal-content .modal-body textarea {
   width: 100%;
+  text-indent: 10px;
   background-color: #f8f9fd;
   border: none;
   height: 80px;
@@ -256,9 +252,20 @@
   list-style: none;
 }
 #catalog .content_item article .goods_item a {
-  font-size: 18px;
+  font-size: 17px;
   text-decoration: none;
   color: #518abe;
+}
+#catalog .content_item article .goods_item a:hover {
+  color: #666;
+}
+#catalog .bg_color:hover {
+  opacity: 0.9;
+  background-color: #999;
+}
+#catalog .bg_color:active {
+  opacity: 0.5;
+  background-color: #fff;
 }
 #catalog .grand_auto {
   display: flex;
@@ -267,16 +274,16 @@
   padding-top: 20px;
 }
 #catalog .grand_auto .grand_info {
-  padding: 30px 30px;
+  padding: 5% 15%;
 }
 #catalog .grand_auto .grand_info h2 {
-  font-size: 40px;
-  padding: 5px 0 0;
+  font-size: 24px;
+  padding: 5px 0 10px;
   text-align: center;
 }
 #catalog .grand_auto .grand_info p {
   color: #666;
-  font-size: 22px;
+  font-size: 17px;
   padding: 5px 0;
 }
 @media screen and (min-width: 320px) and (max-width: 735px) {
@@ -295,7 +302,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 40px 70px 16px;
+  padding: 3% 15% 2%;
 }
 #footer .main_ftr .logo_ftr {
   font-size: 14px;
@@ -340,23 +347,26 @@
 #footer .main_ftr .titel {
   text-transform: uppercase;
   padding-bottom: 15px;
-  color: #6d6d6f;
+  color: #939395;
 }
 #footer .sub_ftr {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 30px 70px;
+  padding: 2% 15%;
   border-top: 2px solid #242424;
   border-bottom: 8px solid #242424;
 }
 #footer .sub_ftr .controls {
   display: flex;
+  padding-left: 40px;
 }
 #footer .sub_ftr .controls .controls_text {
+  text-indent: 12px;
   background-color: #2e2e2e;
   height: 30px;
-  width: 230px;
+  width: 250px;
+  color: #939395;
   border: none;
 }
 #footer .sub_ftr .controls .controls_submit {
@@ -490,11 +500,10 @@
   justify-content: space-around;
 }
 #ourContacts .flex_contacts h2 {
-  font-size: 30px;
-  width: 180px;
+  font-size: 26px;
+  width: 130px;
   padding: 5px 0;
   margin-bottom: 10px;
-  letter-spacing: 4px;
   border-bottom: 1px solid #000;
   color: #e40010;
 }
@@ -503,7 +512,7 @@
   padding-bottom: 50px;
 }
 #ourContacts .flex_contacts li {
-  font-size: 19px;
+  font-size: 17px;
   color: #666;
   padding: 5px 0 5px 40px;
 }
@@ -524,7 +533,7 @@
   box-shadow: -1px -1px 18px -4px rgba(0,0,0,0.75);
 }
 #ourContacts form h3 {
-  font-size: 26px;
+  font-size: 24px;
   padding: 5px 0;
 }
 #ourContacts form .question {
@@ -542,7 +551,7 @@
   width: 48%;
 }
 #ourContacts form p {
-  font-size: 19px;
+  font-size: 17px;
   padding: 10px 0;
 }
 #ourContacts form p [type='text'] {
@@ -561,6 +570,7 @@
   background-color: #f8f9fd;
   border: none;
   height: 80px;
+  text-indent: 10px;
 }
 #ourContacts form [type='submit'] {
   margin: 10px;
@@ -596,18 +606,18 @@
   padding: 40px 50px 20px;
 }
 #we .info .title {
-  font-size: 26px;
+  font-size: 24px;
   text-transform: uppercase;
   text-align: center;
 }
 #we .info p {
-  font-size: 22px;
+  font-size: 17px;
   padding: 10px;
 }
 #content {
   margin: 0 auto;
   max-width: 960px;
-  padding: 40px 0 90px;
+  padding: 40px 0;
 }
 #content * {
   margin: 0;
@@ -655,9 +665,25 @@
   list-style: none;
 }
 #content .content_item .goods .goods_item a {
-  font-size: 18px;
+  font-size: 17px;
   text-decoration: none;
   color: #518abe;
+}
+#content .content_item .goods .goods_item a:hover {
+  color: #666;
+}
+#content .content_item .bg_color:hover {
+  opacity: 0.9;
+  background-color: #999;
+}
+#content .content_item .bg_color:active {
+  opacity: 0.5;
+  background-color: #fff;
+}
+#content .content_item .item_title {
+  font-weight: bold;
+  font-size: 21px;
+  padding-bottom: 6px;
 }
 #content .content_item .question {
   width: 43%;
@@ -665,20 +691,20 @@
 #content .content_item .question p {
   text-align: center;
   color: #666;
-  font-size: 22px;
+  font-size: 17px;
   padding-bottom: 15px;
 }
 #content .content_item .question p span {
-  font-size: 21px;
+  font-size: 18px;
 }
 #content .content_item .question .consultation {
-  width: 180px;
+  width: 220px;
   height: 30px;
   border: none;
   background-color: #de030e;
   border-radius: 17px;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
 #content .content_item .question .consultation:hover {
@@ -691,6 +717,9 @@
 #content .content_item .question .consultation:focus {
   outline: none;
 }
+#content .content_item .phone {
+  padding-right: 9px;
+}
 #content .content_item .contacts {
   width: 49%;
 }
@@ -701,7 +730,7 @@
   padding: 5px 0 5px 40px;
 }
 #content .content_item .contacts .contacts_list li p {
-  font-size: 22px;
+  font-size: 17px;
   color: #666;
 }
 #content .content_item .contacts .contacts_list li p .our_site {
@@ -747,7 +776,7 @@
 }
 #about .caption_item {
   bottom: 40%;
-  width: 57%;
+  width: 48%;
   left: 25%;
 }
 #about .caption_title {
@@ -758,14 +787,14 @@
 }
 #about .catalog {
   position: absolute;
-  left: 41%;
+  left: 43%;
   bottom: 17%;
   width: 180px;
   height: 44px;
   border: none;
   border-radius: 22px;
   cursor: pointer;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.7);
   -webkit-box-shadow: 0px 10px 41px -9px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 41px -9px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 41px -9px rgba(0,0,0,0.75);
@@ -803,10 +832,11 @@
     left: 39%;
   }
 }
+#about .catalog:hover {
+  background-color: rgba(255,255,255,0.5);
+}
 #about .catalog:active {
-  -webkit-box-shadow: inset 0px 0px 30px -9px rgba(0,0,0,0.52);
-  -moz-box-shadow: inset 0px 0px 30px -9px rgba(0,0,0,0.52);
-  box-shadow: inset 0px 0px 30px -9px rgba(0,0,0,0.52);
+  background-color: rgba(255,255,255,0.9);
   outline: none;
 }
 #about .catalog:focus {
@@ -825,6 +855,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 20px;
+  padding-left: 18px;
 }
 #ourBlog .flex h1 {
   font-size: 40px;
@@ -839,7 +870,7 @@
   height: 36px;
   background-color: #ebebeb;
   border-color: transparent;
-  text-indent: 10px;
+  text-indent: 20px;
 }
 #ourBlog .flex form button {
   height: 36px;
@@ -866,27 +897,27 @@
   position: absolute;
   top: 4%;
   right: -1%;
-  font-size: 19px;
-  width: 80px;
-  height: 28px;
+  font-size: 15px;
+  width: 70px;
+  height: 25px;
   text-align: center;
-  line-height: 28px;
+  line-height: 25px;
   background: #ef1b23;
   color: #fff;
 }
 #ourBlog .date {
   padding: 5px 0 10px;
-  font-size: 21px;
+  font-size: 15px;
   color: #999;
 }
 #ourBlog .blog_title {
-  font-size: 52px;
+  font-size: 24px;
   padding: 5px 0;
   border-bottom: 2px solid #f0f0f0;
   margin-bottom: 10px;
 }
 #ourBlog .blog_text {
-  font-size: 22px;
+  font-size: 17px;
   padding: 7px 0;
   color: #737373;
 }
@@ -896,7 +927,7 @@
   justify-content: space-between;
 }
 #ourBlog .read {
-  font-size: 29px;
+  font-size: 17px;
   padding: 5px 0;
   text-decoration: none;
   text-transform: uppercase;
@@ -906,7 +937,7 @@
   color: #999;
 }
 #ourBlog .hashtag a {
-  font-size: 21px;
+  font-size: 17px;
   padding: 0 5px;
   text-decoration: none;
   color: #999;

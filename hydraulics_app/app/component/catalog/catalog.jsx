@@ -10,7 +10,7 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item top'>
           <article className='goods'>
-            <img alt='img1' width={245} src={this.props.main.media_catalog1.url} />
+            <img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} />
             <h3>Гідравлічне обладнання</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -27,7 +27,7 @@ class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img alt='img2' width={245} src={this.props.main.media_catalog2.url} />
+            <img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url} />
             <h3>Металообробні станки</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -41,7 +41,7 @@ class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img alt='img3' width={245} src={this.props.main.media_catalog3.url} />
+            <img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url} />
             <h3>Запчастини для авто</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -59,17 +59,17 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item'>
           <article>
-            <img alt='img4' width={245} src={this.props.main.media_catalog4.url} />
+            <img className='bg_color' alt='img4' width={245} src={this.props.main.media_catalog4.url} />
             <h3>Ремонт гідрообладнання</h3>
             <button className='catalog'>Каталог послуг</button>
           </article>
           <article>
-            <img alt='img5' width={245} src={this.props.main.media_catalog5.url} />
+            <img className='bg_color' alt='img5' width={245} src={this.props.main.media_catalog5.url} />
             <h3>Ремонт гідрошлангів</h3>
             <button className='catalog'>Каталог послуг</button>
           </article>
           <article>
-            <img alt='img6' width={245} src={this.props.main.media_catalog6.url} />
+            <img className='bg_color' alt='img6' width={245} src={this.props.main.media_catalog6.url} />
             <h3>Ремонт паливної апаратури </h3>
             <button className='catalog'>Каталог послуг</button>
           </article>

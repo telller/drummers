@@ -26,7 +26,7 @@ class Content extends Component {
       <div id='content'>
         <section className='content_item'>
           <article className='goods'>
-            <img alt='img1' width={245} src={this.props.main.media_catalog1.url} />
+            <img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} />
             <h3 className='goods_title'>Гідравлічне обладнання</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -43,7 +43,7 @@ class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img alt='img2' width={245} src={this.props.main.media_catalog2.url} />
+            <img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url} />
             <h3 className='goods_title'>Металообробні станки</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -57,7 +57,7 @@ class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img alt='img3' width={245} src={this.props.main.media_catalog3.url} />
+            <img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url} />
             <h3 className='goods_title'>Запчастини для авто</h3>
             <button className='catalog'>Каталог товарів</button>
             <ul className='goods_item'>
@@ -73,12 +73,12 @@ class Content extends Component {
         </section>
         <section className='content_item bottom'>
           <article className='question goods'>
-            <h3>Є ПИТАННЯ?</h3>
+            <h3 className='item_title'>Є ПИТАННЯ?</h3>
             <p>Залиште заявку на консультацію з фахівцем або зателефонуйте нам <span>(050) 313 55 12</span></p>
-            <button className='consultation' onClick={this.handleModal}>Отримати консультацію</button>
+            <button className='consultation' onClick={this.handleModal}><img className='phone' alt='phone' height={20} src={this.props.main.media_phone.url} />Отримати консультацію</button>
           </article>
           <article className='contacts goods'>
-            <h3>КОНТАКТИ</h3>
+            <h3 className='item_title'>КОНТАКТИ</h3>
             <ul className='contacts_list'>
               <li>
                 <p>Головний офіс</p>

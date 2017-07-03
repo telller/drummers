@@ -1,7 +1,7 @@
 #content
   margin 0 auto
   max-width 960px
-  padding 40px 0 90px
+  padding 40px 0
   *
     margin 0
     padding 0
@@ -45,9 +45,23 @@
         list-style none
 
         a
-          font-size 18px
+          font-size 17px
           text-decoration none
           color #518ABE
+        a:hover
+          color #666
+
+    .bg_color:hover
+      opacity 0.9
+      background-color rgb(153,153,153)
+    .bg_color:active
+      opacity 0.5
+      background-color rgb(255,255,255)
+
+    .item_title
+      font-weight bold
+      font-size 21px
+      padding-bottom 6px
 
     .question
       width 43%
@@ -55,20 +69,20 @@
       p
         text-align center
         color #666
-        font-size 22px
+        font-size 17px
         padding-bottom 15px
 
         span
-          font-size 21px
+          font-size 18px
 
       .consultation
-        width 180px
+        width 220px
         height 30px
         border none
         background-color #DE030E
         border-radius 17px
         color #fff
-        font-size 12px
+        font-size 14px
         cursor pointer
       .consultation:hover
         background-color #c33
@@ -77,6 +91,9 @@
         outline none
       .consultation:focus
         outline none
+
+    .phone
+      padding-right 9px
 
     .contacts
       width 49%
@@ -87,7 +104,7 @@
         li
           padding 5px 0 5px 40px
           p
-            font-size 22px
+            font-size 17px
             color #666
             .our_site
               text-decoration none

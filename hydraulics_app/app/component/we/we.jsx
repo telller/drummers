@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import './we.styl'
 
-export default class We extends Component {
+class We extends Component {
   render () {
     return (
       <div id='we'>
         <div className='foto'>
-          <img src='#' alt='Our photo' />
+          <img height={400} src={this.props.main.media_ourFoto.url} alt='Our photo' />
         </div>
         <div className='info'>
           <h3 className='title'>Про нас</h3>
@@ -19,3 +20,10 @@ export default class We extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(We)

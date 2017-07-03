@@ -37,7 +37,7 @@ class Header extends Component {
                 <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
               </ul>
             </nav>
-            <button className='cole' onClick={this.handleModal}>Замовити дзвінок</button>
+            <button className='cole' onClick={this.handleModal}><img className='phone' alt='phone' height={20} src={this.props.main.media_phone.url} />Замовити дзвінок</button>
           </div>
           <Modal show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
@@ -58,6 +58,7 @@ class Header extends Component {
             <Modal.Footer />
           </Modal>
           <ul className='contact'>
+            <li>Телефони офісу:</li>
             <li className='contact_item'>050 313 55 12</li>
             <li className='contact_item'>095 432 44 67</li>
           </ul>

@@ -16,17 +16,17 @@ class About extends Component {
       <div id='about'>
         <Carousel interval={this.state.interval}>
           <Carousel.Item>
-            <img className='streth' height={500} alt='img1' src={this.props.main.media_carousel1.url} />
+            <img className='streth' height={568} alt='img1' src={this.props.main.media_carousel1.url} />
             <Carousel.Caption className='caption_item'>
               <h1 className='caption_title'>Найнижча ціна - найкраща якість</h1>
               <p className='caption_text'>на гідравлічне обладнання та металообробні станки в Україні</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img className='streth' height={500} alt='img3' src={this.props.main.media_carousel2.url} />
+            <img className='streth' height={568} alt='img3' src={this.props.main.media_carousel2.url} />
           </Carousel.Item>
           <Carousel.Item>
-            <img className='streth' height={500} alt='img2' src={this.props.main.media_carousel3.url} />
+            <img className='streth' height={568} alt='img2' src={this.props.main.media_carousel3.url} />
           </Carousel.Item>
         </Carousel>
         <Link to='/catalogProduct'><button className='catalog'>Каталог товарів</button></Link>
