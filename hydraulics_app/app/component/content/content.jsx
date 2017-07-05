@@ -26,9 +26,9 @@ class Content extends Component {
       <div id='content'>
         <section className='content_item'>
           <article className='goods'>
-            <img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} />
-            <h3 className='goods_title'>Гідравлічне обладнання</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url}/></a>
+            <a href='#' className='title_link'><h3 className='goods_title'>Гідравлічне обладнання</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>гідравлічні насоси</a></li>
               <li><a href='#'>гідравлічне обладнання</a></li>
@@ -43,9 +43,9 @@ class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url} />
-            <h3 className='goods_title'>Металообробні станки</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></a>
+            <a href='#' className='title_link'><h3 className='goods_title'>Металообробні станки</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>станки DELLA</a></li>
               <li><a href='#'>станки FOX</a></li>
@@ -57,9 +57,9 @@ class Content extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url} />
-            <h3 className='goods_title'>Запчастини для авто</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></a>
+            <a href='#' className='title_link'><h3 className='goods_title'>Запчастини для авто</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>запчастини до двигуна</a></li>
               <li><a href='#'>запчастини до ПК</a></li>
@@ -80,16 +80,16 @@ class Content extends Component {
           <article className='contacts goods'>
             <h3 className='item_title'>КОНТАКТИ</h3>
             <ul className='contacts_list'>
-              <li>
-                <p>Головний офіс</p>
-                <p>м.Житомир вул Промислова 12</p>
+              <li className='contacts_item location'>
+                <p className='contacts_txt'>Головний офіс</p>
+                <p className='contacts_txt'>м.Житомир вул Промислова 12</p>
               </li>
-              <li>
-                <p>Телефони офісу</p>
-                <p>050 313 55 12, 095 567 42 85</p>
+              <li className='contacts_item phone_of'>
+                <p className='contacts_txt'>Телефони офісу</p>
+                <p className='contacts_txt'>050 313 55 12, 095 567 42 85</p>
               </li>
-              <li>
-                <p><a className='our_site' href='#'>info@website.info</a></p>
+              <li className='contacts_item mail'>
+                <p className='contacts_txt'><a className='our_site' href='#'>info@website.info</a></p>
               </li>
             </ul>
           </article>

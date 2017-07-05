@@ -9,16 +9,16 @@ export default class OurContacts extends Component {
           <div>
             <h2>Контакти</h2>
             <ul className='contacts_list'>
-              <li>
+              <li className='location'>
                 <p>Головний офіс</p>
                 <p>м.Житомир вул Промислова 12</p>
               </li>
-              <li>
+              <li className='phone_of'>
                 <p>Телефони офісу</p>
                 <p>050 313 55 12,</p>
                 <p>095 567 42 85</p>
               </li>
-              <li>
+              <li className='mail'>
                 <p><a className='our_site' href='#'>info@website.info</a></p>
               </li>
             </ul>

@@ -10,7 +10,7 @@ class OurBlog extends Component {
           <h1>Блог</h1>
           <form>
             <input type='search' placeholder='Пошук' />
-            <button className='search'><img className='searh_btn' height={20} src={this.props.main.media_search.url} /></button>
+            <button className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
           </form>
         </div>
         <div className='blog_item shadow'>

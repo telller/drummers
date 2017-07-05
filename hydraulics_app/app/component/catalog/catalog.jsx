@@ -10,9 +10,9 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item top'>
           <article className='goods'>
-            <img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} />
-            <h3>Гідравлічне обладнання</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} /></a>
+            <a href='#' className='title_link'><h3>Гідравлічне обладнання</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>гідравлічні насоси</a></li>
               <li><a href='#'>гідравлічне обладнання</a></li>
@@ -27,9 +27,9 @@ class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url} />
-            <h3>Металообробні станки</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></a>
+            <a href='#' className='title_link'><h3>Металообробні станки</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>станки DELLA</a></li>
               <li><a href='#'>станки FOX</a></li>
@@ -41,9 +41,9 @@ class Catalog extends Component {
             </ul>
           </article>
           <article className='goods'>
-            <img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url} />
-            <h3>Запчастини для авто</h3>
-            <button className='catalog'>Каталог товарів</button>
+            <a href='#'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></a>
+            <a href='#' className='title_link'><h3>Запчастини для авто</h3></a>
+            <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>
               <li><a href='#'>запчастини до двигуна</a></li>
               <li><a href='#'>запчастини до ПК</a></li>
@@ -59,19 +59,19 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item'>
           <article>
-            <img className='bg_color' alt='img4' width={245} src={this.props.main.media_catalog4.url} />
-            <h3>Ремонт гідрообладнання</h3>
-            <button className='catalog'>Каталог послуг</button>
+            <a href='#'><img className='bg_color' alt='img4' width={245} src={this.props.main.media_catalog4.url}/></a>
+            <a href='#' className='title_link'><h3>Ремонт гідрообладнання</h3></a>
+            <a href='#'><button className='catalog'>Каталог послуг</button></a>
           </article>
           <article>
-            <img className='bg_color' alt='img5' width={245} src={this.props.main.media_catalog5.url} />
-            <h3>Ремонт гідрошлангів</h3>
-            <button className='catalog'>Каталог послуг</button>
+            <a href='#'><img className='bg_color' alt='img5' width={245} src={this.props.main.media_catalog5.url}/></a>
+            <a href='#' className='title_link'><h3>Ремонт гідрошлангів</h3></a>
+            <a href='#'><button className='catalog'>Каталог послуг</button></a>
           </article>
           <article>
-            <img className='bg_color' alt='img6' width={245} src={this.props.main.media_catalog6.url} />
-            <h3>Ремонт паливної апаратури </h3>
-            <button className='catalog'>Каталог послуг</button>
+            <a href='#'><img className='bg_color' alt='img6' width={245} src={this.props.main.media_catalog6.url}/></a>
+            <a href='#' className='title_link'><h3>Ремонт паливної апаратури </h3></a>
+            <a href='#'><button className='catalog'>Каталог послуг</button></a>
           </article>
         </section>
         <div className='grand_auto'>

@@ -12700,6 +12700,7 @@ var Map = function (_Component) {
     _this.state = {
       center: { lat: 50.24, lng: 28.74 },
       zoom: 13,
+      scrollwheel: false,
       key: 'AIzaSyAnKaOR-VousyT9cpPaq8NiJpGpvM5fQJM'
     };
     return _this;
@@ -12713,7 +12714,7 @@ var Map = function (_Component) {
         { id: 'map' },
         _react2.default.createElement(
           _googleMapReact2.default,
-          { defaultCenter: this.state.center, defaultZoom: this.state.zoom, apiKey: this.state.key },
+          { defaultCenter: this.state.center, defaultZoom: this.state.zoom, apiKey: this.state.key, options: this.state },
           _react2.default.createElement(AnyReactComponent, {
             lat: 50.237100,
             lng: 28.736621,
@@ -24262,16 +24263,28 @@ var Catalog = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img1', width: 245, src: this.props.main.media_catalog1.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u0413\u0456\u0434\u0440\u0430\u0432\u043B\u0456\u0447\u043D\u0435 \u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img1', width: 245, src: this.props.main.media_catalog1.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u0413\u0456\u0434\u0440\u0430\u0432\u043B\u0456\u0447\u043D\u0435 \u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -24371,16 +24384,28 @@ var Catalog = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img2', width: 245, src: this.props.main.media_catalog2.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u041C\u0435\u0442\u0430\u043B\u043E\u043E\u0431\u0440\u043E\u0431\u043D\u0456 \u0441\u0442\u0430\u043D\u043A\u0438'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img2', width: 245, src: this.props.main.media_catalog2.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u041C\u0435\u0442\u0430\u043B\u043E\u043E\u0431\u0440\u043E\u0431\u043D\u0456 \u0441\u0442\u0430\u043D\u043A\u0438'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -24453,16 +24478,28 @@ var Catalog = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img3', width: 245, src: this.props.main.media_catalog3.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438\u043D\u0438 \u0434\u043B\u044F \u0430\u0432\u0442\u043E'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img3', width: 245, src: this.props.main.media_catalog3.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438\u043D\u0438 \u0434\u043B\u044F \u0430\u0432\u0442\u043E'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -24545,46 +24582,82 @@ var Catalog = function (_Component) {
           _react2.default.createElement(
             'article',
             null,
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img4', width: 245, src: this.props.main.media_catalog4.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u0420\u0435\u043C\u043E\u043D\u0442 \u0433\u0456\u0434\u0440\u043E\u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img4', width: 245, src: this.props.main.media_catalog4.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u0420\u0435\u043C\u043E\u043D\u0442 \u0433\u0456\u0434\u0440\u043E\u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              )
             )
           ),
           _react2.default.createElement(
             'article',
             null,
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img5', width: 245, src: this.props.main.media_catalog5.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u0420\u0435\u043C\u043E\u043D\u0442 \u0433\u0456\u0434\u0440\u043E\u0448\u043B\u0430\u043D\u0433\u0456\u0432'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img5', width: 245, src: this.props.main.media_catalog5.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u0420\u0435\u043C\u043E\u043D\u0442 \u0433\u0456\u0434\u0440\u043E\u0448\u043B\u0430\u043D\u0433\u0456\u0432'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              )
             )
           ),
           _react2.default.createElement(
             'article',
             null,
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img6', width: 245, src: this.props.main.media_catalog6.url }),
             _react2.default.createElement(
-              'h3',
-              null,
-              '\u0420\u0435\u043C\u043E\u043D\u0442 \u043F\u0430\u043B\u0438\u0432\u043D\u043E\u0457 \u0430\u043F\u0430\u0440\u0430\u0442\u0443\u0440\u0438 '
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img6', width: 245, src: this.props.main.media_catalog6.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                '\u0420\u0435\u043C\u043E\u043D\u0442 \u043F\u0430\u043B\u0438\u0432\u043D\u043E\u0457 \u0430\u043F\u0430\u0440\u0430\u0442\u0443\u0440\u0438 '
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u043F\u043E\u0441\u043B\u0443\u0433'
+              )
             )
           )
         ),
@@ -24706,16 +24779,28 @@ var Content = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img1', width: 245, src: this.props.main.media_catalog1.url }),
             _react2.default.createElement(
-              'h3',
-              { className: 'goods_title' },
-              '\u0413\u0456\u0434\u0440\u0430\u0432\u043B\u0456\u0447\u043D\u0435 \u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img1', width: 245, src: this.props.main.media_catalog1.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                { className: 'goods_title' },
+                '\u0413\u0456\u0434\u0440\u0430\u0432\u043B\u0456\u0447\u043D\u0435 \u043E\u0431\u043B\u0430\u0434\u043D\u0430\u043D\u043D\u044F'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -24815,16 +24900,28 @@ var Content = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img2', width: 245, src: this.props.main.media_catalog2.url }),
             _react2.default.createElement(
-              'h3',
-              { className: 'goods_title' },
-              '\u041C\u0435\u0442\u0430\u043B\u043E\u043E\u0431\u0440\u043E\u0431\u043D\u0456 \u0441\u0442\u0430\u043D\u043A\u0438'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img2', width: 245, src: this.props.main.media_catalog2.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                { className: 'goods_title' },
+                '\u041C\u0435\u0442\u0430\u043B\u043E\u043E\u0431\u0440\u043E\u0431\u043D\u0456 \u0441\u0442\u0430\u043D\u043A\u0438'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -24897,16 +24994,28 @@ var Content = function (_Component) {
           _react2.default.createElement(
             'article',
             { className: 'goods' },
-            _react2.default.createElement('img', { className: 'bg_color', alt: 'img3', width: 245, src: this.props.main.media_catalog3.url }),
             _react2.default.createElement(
-              'h3',
-              { className: 'goods_title' },
-              '\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438\u043D\u0438 \u0434\u043B\u044F \u0430\u0432\u0442\u043E'
+              'a',
+              { href: '#' },
+              _react2.default.createElement('img', { className: 'bg_color', alt: 'img3', width: 245, src: this.props.main.media_catalog3.url })
             ),
             _react2.default.createElement(
-              'button',
-              { className: 'catalog' },
-              '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              'a',
+              { href: '#', className: 'title_link' },
+              _react2.default.createElement(
+                'h3',
+                { className: 'goods_title' },
+                '\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438\u043D\u0438 \u0434\u043B\u044F \u0430\u0432\u0442\u043E'
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'button',
+                { className: 'catalog' },
+                '\u041A\u0430\u0442\u0430\u043B\u043E\u0433 \u0442\u043E\u0432\u0430\u0440\u0456\u0432'
+              )
             ),
             _react2.default.createElement(
               'ul',
@@ -25018,38 +25127,38 @@ var Content = function (_Component) {
               { className: 'contacts_list' },
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'contacts_item location' },
                 _react2.default.createElement(
                   'p',
-                  null,
+                  { className: 'contacts_txt' },
                   '\u0413\u043E\u043B\u043E\u0432\u043D\u0438\u0439 \u043E\u0444\u0456\u0441'
                 ),
                 _react2.default.createElement(
                   'p',
-                  null,
+                  { className: 'contacts_txt' },
                   '\u043C.\u0416\u0438\u0442\u043E\u043C\u0438\u0440 \u0432\u0443\u043B \u041F\u0440\u043E\u043C\u0438\u0441\u043B\u043E\u0432\u0430 12'
                 )
               ),
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'contacts_item phone_of' },
                 _react2.default.createElement(
                   'p',
-                  null,
+                  { className: 'contacts_txt' },
                   '\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u0438 \u043E\u0444\u0456\u0441\u0443'
                 ),
                 _react2.default.createElement(
                   'p',
-                  null,
+                  { className: 'contacts_txt' },
                   '050 313 55 12, 095 567 42 85'
                 )
               ),
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'contacts_item mail' },
                 _react2.default.createElement(
                   'p',
-                  null,
+                  { className: 'contacts_txt' },
                   _react2.default.createElement(
                     'a',
                     { className: 'our_site', href: '#' },
@@ -25174,7 +25283,7 @@ var OurBlog = function (_Component) {
             _react2.default.createElement(
               'button',
               { className: 'search' },
-              _react2.default.createElement('img', { className: 'searh_btn', height: 20, src: this.props.main.media_search.url })
+              _react2.default.createElement('img', { className: 'searh_btn', height: 24, src: this.props.main.media_search.url })
             )
           )
         ),
@@ -25577,7 +25686,7 @@ var OurContacts = function (_Component) {
               { className: 'contacts_list' },
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'location' },
                 _react2.default.createElement(
                   'p',
                   null,
@@ -25591,7 +25700,7 @@ var OurContacts = function (_Component) {
               ),
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'phone_of' },
                 _react2.default.createElement(
                   'p',
                   null,
@@ -25610,7 +25719,7 @@ var OurContacts = function (_Component) {
               ),
               _react2.default.createElement(
                 'li',
-                null,
+                { className: 'mail' },
                 _react2.default.createElement(
                   'p',
                   null,
