@@ -24,9 +24,15 @@ class About extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img className='streth' height={568} alt='img3' src={this.props.main.media_carousel2.url} />
+            <Carousel.Caption className='caption_item'>
+              <h1 className='caption_title'>Широкий вибір металообробних станків FOX</h1>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className='streth' height={568} alt='img2' src={this.props.main.media_carousel3.url} />
+            <Carousel.Caption className='caption_item'>
+              <h1 className='caption_title'>Якісні автозапчастини від виробника</h1>
+            </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
         <Link to='/catalogProduct'><button className='catalog'>Каталог товарів</button></Link>

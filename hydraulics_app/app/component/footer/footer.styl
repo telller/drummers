@@ -98,19 +98,42 @@
         height 30px
         background-color #2E2E2E
 
-  @media screen and (min-width: 640px) and (max-width: 768px)
+  @media screen and (min-width: 690px)
+    .logo_ftr
+      padding-bottom 30px
+    .sub_ftr
+      justify-content space-between
+      .controls
+        padding-left 0
+  @media screen and (min-width: 640px) and (max-width: 689px)
     .rubric
       padding-bottom 30px
+    .logo_ftr
+      padding-bottom 20px
+
+    .sub_ftr
+      justify-content center
+      .controls
+        padding-left 0
+        padding-bottom 30px
 
   @media screen and (min-width: 320px) and (max-width: 639px)
     .logo_ftr
       display none
 
+    .main_ftr
+      justify-content center
+
     .rubric
       padding-bottom 30px
 
+    .contact_ftr
+      padding-left 20px
+
     .sub_ftr
       justify-content center
+      .controls
+        padding-left 0
 
     .social
       margin-top 20px

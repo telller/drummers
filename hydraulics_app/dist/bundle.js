@@ -24175,12 +24175,30 @@ var About = function (_Component) {
           _react2.default.createElement(
             _reactBootstrap.Carousel.Item,
             null,
-            _react2.default.createElement('img', { className: 'streth', height: 568, alt: 'img3', src: this.props.main.media_carousel2.url })
+            _react2.default.createElement('img', { className: 'streth', height: 568, alt: 'img3', src: this.props.main.media_carousel2.url }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              { className: 'caption_item' },
+              _react2.default.createElement(
+                'h1',
+                { className: 'caption_title' },
+                '\u0428\u0438\u0440\u043E\u043A\u0438\u0439 \u0432\u0438\u0431\u0456\u0440 \u043C\u0435\u0442\u0430\u043B\u043E\u043E\u0431\u0440\u043E\u0431\u043D\u0438\u0445 \u0441\u0442\u0430\u043D\u043A\u0456\u0432 FOX'
+              )
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Carousel.Item,
             null,
-            _react2.default.createElement('img', { className: 'streth', height: 568, alt: 'img2', src: this.props.main.media_carousel3.url })
+            _react2.default.createElement('img', { className: 'streth', height: 568, alt: 'img2', src: this.props.main.media_carousel3.url }),
+            _react2.default.createElement(
+              _reactBootstrap.Carousel.Caption,
+              { className: 'caption_item' },
+              _react2.default.createElement(
+                'h1',
+                { className: 'caption_title' },
+                '\u042F\u043A\u0456\u0441\u043D\u0456 \u0430\u0432\u0442\u043E\u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0438\u043D\u0438 \u0432\u0456\u0434 \u0432\u0438\u0440\u043E\u0431\u043D\u0438\u043A\u0430'
+              )
+            )
           )
         ),
         _react2.default.createElement(
