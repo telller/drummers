@@ -1,9 +1,26 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import WP from '../../connect'
 import './ourBlog.styl'
 
 class OurBlog extends Component {
+  constructor () {
+    super()
+    this.state = {
+      posts: []
+    }
+  }
+  componentDidMount () {
+    WP.posts().then(data => {
+      this.setState({
+        posts: data
+      })
+    }).catch(err => {
+      console.error(err)
+    })
+  }
   render () {
+    console.log('POSTS', this.state.posts)
     return (
       <div id='ourBlog'>
         <div className='flex'>

@@ -1,9 +1,24 @@
+import WooCommerce from '../../connect-woocom-api'
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import './catalog.styl'
 
 class Catalog extends Component {
+  constructor () {
+    super()
+    this.state = {
+      product: []
+    }
+  }
+  componentDidMount () {
+    WooCommerce.getAsync('products').then(result => {
+      this.setState({
+        product: JSON.parse(result.toJSON().body).filter(item => item.in_stock === true)
+      })
+    })
+  }
   render () {
+    console.log('PRODUCT', this.state.product)
     return (
       <div id='catalog'>
         <h2 className='title'>Каталог товарів</h2>

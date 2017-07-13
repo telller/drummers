@@ -29,7 +29,7 @@ module.exports = {
     ],
     "no-unused-vars": ["warn",{ "vars": "all", "args": "after-used" }],
     "camelcase": "warn",
-    "no-console": 1,
+    "no-console": 0,
     "arrow-parens": ["error", "as-needed"],
     "vars-on-top": 1
   }
