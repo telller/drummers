@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route path='/' component={Home} />
       <Route path='/aboutUs' component={AboutUs} />
       <Route path='/catalogProduct' component={CatalogProduct} />
-      <Route path='/blog' component={Blog} />
+      <Route path='/blogposts' component={Blog} />
       <Route path='/contacts' component={Contacts} />
       <Route path='/contactForm' component={ContactForm} />
       <Route path='*' component={Home} />

@@ -2,13 +2,33 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import WP from '../../connect'
 import './ourBlog.styl'
+import renderHTML from 'react-render-html'
+import moment from 'moment'
 
 class OurBlog extends Component {
   constructor () {
     super()
     this.state = {
-      posts: []
+      posts: [],
+      tags: []
     }
+  }
+  getDate (date) {
+    const months = {
+      '0': 'січня',
+      '1': 'лютого',
+      '2': 'березня',
+      '3': 'квітня',
+      '4': 'травня',
+      '5': 'червня',
+      '6': 'липня',
+      '7': 'серпня',
+      '8': 'вересня',
+      '9': 'жовтня',
+      '10': 'листопада',
+      '11': 'груденя'
+    }
+    return moment(date).date() + ' ' + months[moment(date).month()]
   }
   componentDidMount () {
     WP.posts().then(data => {
@@ -30,23 +50,33 @@ class OurBlog extends Component {
             <button className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
           </form>
         </div>
-        <div className='blog_item shadow'>
-          <div className='labeles'>Поради</div>
-          <p className='date'>20 травня</p>
-          <h2 className='blog_title'>Гідравлічне обладнання: як не розчаруватись у виборі?</h2>
-          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
-          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-          <p className='blog_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni.</p>
-          <div className='blog_link'>
-            <a className='read' href='#'>Читати далі</a>
-            <div className='hashtag'>
-              <a href='#'>#гідравліка</a>
-              <a href='#'>#обладнання</a>
-              <a href='#'>#поради</a>
+        {this.state.posts.map((el, key) => {
+          return (
+            <div key={key} className='blog_item shadow'>
+              <div className='labeles'>Поради</div>
+              <p className='date'>{this.getDate(el.date)}</p>
+              <div className='blog_title'>{el.title.rendered}</div>
+              <div className='blog_text'>{renderHTML(el.content.rendered)}</div>
+              <div className='blog_link'>
+                <a className='read' href='#'>Читати далі</a>
+                <div className='hashtag'>{el.tags.map(el => {
+                  let res
+                  WP.tags().id(el).then(data => {
+                    console.log(data.name)
+                    res = data.name
+                  }).catch(err => {
+                    console.error(err)
+                  })
+                  return (
+                    <div>{res}</div>
+                  )
+                })}</div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className='shadow'>
+          )
+        })}
+
+        {/* <div className='shadow'>
           <div><img width={'100%'} src={this.props.main.media_blog.url} alt='pic1' /></div>
           <div className='blog_item'>
             <div className='labeles'>Огляд</div>
@@ -109,7 +139,7 @@ class OurBlog extends Component {
             <li><a href='#'>7</a></li>
             <li><a href='#'>8</a></li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     )
   }
