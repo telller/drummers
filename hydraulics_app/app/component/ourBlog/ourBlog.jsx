@@ -38,9 +38,17 @@ class OurBlog extends Component {
     }).catch(err => {
       console.error(err)
     })
+    WP.tags().then(data => {
+      this.setState({
+        tags: data
+      })
+    }).catch(err => {
+      console.error(err)
+    })
   }
   render () {
     console.log('POSTS', this.state.posts)
+    console.log('TAGS', this.state.tags)
     return (
       <div id='ourBlog'>
         <div className='flex'>
@@ -59,16 +67,14 @@ class OurBlog extends Component {
               <div className='blog_text'>{renderHTML(el.content.rendered)}</div>
               <div className='blog_link'>
                 <a className='read' href='#'>Читати далі</a>
-                <div className='hashtag'>{el.tags.map(el => {
-                  let res
-                  WP.tags().id(el).then(data => {
-                    console.log(data.name)
-                    res = data.name
-                  }).catch(err => {
-                    console.error(err)
-                  })
+                <div className='hashtag'>{el.tags.map((el, key) => {
+                  let tag = el
                   return (
-                    <div>{res}</div>
+                    <div key={key}>{this.state.tags.map(el => {
+                      if (el.id === tag) {
+                        return el.name
+                      }
+                    })}</div>
                   )
                 })}</div>
               </div>
