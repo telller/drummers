@@ -4,6 +4,7 @@ import WP from '../../connect'
 import './ourBlog.styl'
 import renderHTML from 'react-render-html'
 import moment from 'moment'
+import BlogItem from '../postItem/postItem.jsx'
 
 class OurBlog extends Component {
   constructor () {
@@ -58,29 +59,8 @@ class OurBlog extends Component {
             <button className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
           </form>
         </div>
-        {this.state.posts.map((el, key) => {
-          return (
-            <div key={key} className='blog_item shadow'>
-              <div className='labeles'>Поради</div>
-              <p className='date'>{this.getDate(el.date)}</p>
-              <div className='blog_title'>{el.title.rendered}</div>
-              <div className='blog_text'>{renderHTML(el.content.rendered)}</div>
-              <div className='blog_link'>
-                <a className='read' href='#'>Читати далі</a>
-                <div className='hashtag'>{el.tags.map((el, key) => {
-                  let tag = el
-                  return (
-                    <div key={key}>{this.state.tags.map(el => {
-                      if (el.id === tag) {
-                        return el.name
-                      }
-                    })}</div>
-                  )
-                })}</div>
-              </div>
-            </div>
-          )
-        })}
+        {this.state.posts.map((el, key) => <BlogItem key={key} el={el} tags={this.state.tags} /> )}
+
 
         {/* <div className='shadow'>
           <div><img width={'100%'} src={this.props.main.media_blog.url} alt='pic1' /></div>

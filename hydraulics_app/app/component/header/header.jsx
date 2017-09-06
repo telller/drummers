@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router'
 import './header.styl'
 
@@ -59,8 +60,8 @@ class Header extends Component {
           </Modal>
           <ul className='contact'>
             <li>Телефони офісу:</li>
-            <li className='contact_item'>050 313 55 12</li>
-            <li className='contact_item'>095 432 44 67</li>
+            <li className='contact_item'>{this.props.main.contact_one_phone}</li>
+            <li className='contact_item'>{this.props.main.contact_two_phone}</li>
           </ul>
         </div>
       </header>
@@ -68,6 +69,9 @@ class Header extends Component {
   }
 }
 
+Header.propTypes = {
+  main: PropTypes.object
+}
 const mapStateToProps = state => {
   return { main: state.main, router: state.router }
 }

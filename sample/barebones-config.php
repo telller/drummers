@@ -386,5 +386,42 @@
             )
 
         )
-    )
-  );
+    )  );
+    // START SECTION CONTACT
+    Redux::setSection( $opt_name, array(
+       'title'      => __( 'Contact', 'redux-framework-drummers' ),
+       'desc'       => __( '', 'redux-framework-drummers' ),
+       'icon'  => 'el el-envelope-alt',
+       'id'         => 'contact',
+       'fields'     => array(
+           array(
+               'id'       => 'contact_one_phone',
+               'type'     => 'text',
+               'title'    => __( 'One phone', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Text Field for the contact number', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_two_phone',
+               'type'     => 'text',
+               'title'    => __( 'Two phone', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Text Field for the contact number.', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_location',
+               'type'     => 'text',
+               'title'    => __( 'Our location', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Text Field for the contact our location.', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_email',
+               'type'     => 'text',
+               'title'    => __( 'Our email', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Text Field for the contact our email', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+       )
+   )  );
+   // -> END HOME CONCTACT

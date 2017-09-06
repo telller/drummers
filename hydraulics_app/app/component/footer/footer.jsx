@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router'
 import './footer.styl'
 
@@ -30,14 +31,14 @@ class Footer extends Component {
             <ul className='contact_list'>
               <li>
                 <p>Головний офіс</p>
-                <p>м.Житомир вул Промислова 12</p>
+                <p>{this.props.main.contact_location}</p>
               </li>
               <li>
                 <p>Телефони офісу</p>
-                <p>050 313 55 12, 095 567 42 85</p>
+                <p>{this.props.main.contact_one_phone}, {this.props.main.contact_two_phone}</p>
               </li>
               <li>
-                <p><a href='#' className='our_site'>info@website.info</a></p>
+                <p><a href='#' className='our_site'>{this.props.main.contact_email}</a></p>
               </li>
             </ul>
           </div>
@@ -61,6 +62,10 @@ class Footer extends Component {
     )
   }
 }
+Footer.propTypes = {
+  main: PropTypes.object
+}
+
 const mapStateToProps = state => {
   return { main: state.main, router: state.router }
 }
