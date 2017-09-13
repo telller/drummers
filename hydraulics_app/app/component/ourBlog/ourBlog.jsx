@@ -11,7 +11,11 @@ class OurBlog extends Component {
     super()
     this.state = {
       posts: [],
-      tags: []
+      postFilters: [],
+      tags: [],
+      count: 1,
+      loadMoreButtonVisible: true,
+      searchValue: ''
     }
   }
   getDate (date) {
@@ -32,10 +36,15 @@ class OurBlog extends Component {
     return moment(date).date() + ' ' + months[moment(date).month()]
   }
   componentDidMount () {
-    WP.posts().then(data => {
+    WP.posts().perPage(2).page(this.state.count).then(data => {
       this.setState({
-        posts: data
-      })
+        posts: data,
+        postFilters: data
+      }, () => WP.posts().perPage(2).page(this.state.count + 1).then(data).catch(err => {
+        this.setState({
+          loadMoreButtonVisible: false
+        })
+      }))
     }).catch(err => {
       console.error(err)
     })
@@ -47,19 +56,43 @@ class OurBlog extends Component {
       console.error(err)
     })
   }
+  loadMore(){
+    this.setState({count: this.state.count + 1},
+      () => WP.posts().perPage(2).page(this.state.count).then(data => {
+        this.setState({
+          posts: this.state.posts.concat(data),
+          postFilters: this.state.posts.concat(data)
+        })
+      }).catch(err => {
+        this.setState({
+          loadMoreButtonVisible: false
+        })
+      })
+    )
+  }
+  searchposts(event){
+    event.preventDefault()
+    let string = this.state.searchValue
+    let postFilters = this.state.posts.filter((item) =>
+      {if (~item.title.rendered.toLowerCase().indexOf(this.state.searchValue.toLowerCase())){
+        return item
+      }}
+    )
+    this.setState({ postFilters})
+  }
   render () {
-    console.log('POSTS', this.state.posts)
-    console.log('TAGS', this.state.tags)
     return (
       <div id='ourBlog'>
         <div className='flex'>
           <h1>Блог</h1>
-          <form>
-            <input type='search' placeholder='Пошук' />
-            <button className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
+
+          <form onSubmit={(event) => this.searchposts(event)}>
+            <input onChange={(event) => this.setState({searchValue: event.target.value})} type='se arch' placeholder='Пошук' />
+            <button onClick={(event) => this.searchposts(event)}  className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
           </form>
         </div>
-        {this.state.posts.map((el, key) => <BlogItem key={key} el={el} tags={this.state.tags} /> )}
+        {this.state.postFilters.map((el, key) => <BlogItem key={key} el={el} tags={this.state.tags} /> )}
+        <button className={this.state.loadMoreButtonVisible ? 'blog_button_load_more' : 'blog_button_load_more hidden'} onClick={() => this.loadMore()}>Завантажити більше</button>
 
 
         {/* <div className='shadow'>
