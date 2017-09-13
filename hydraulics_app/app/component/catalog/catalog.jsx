@@ -1,6 +1,7 @@
 import WooCommerce from '../../connect-woocom-api'
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 import './catalog.styl'
 
 class Catalog extends Component {
@@ -11,11 +12,12 @@ class Catalog extends Component {
     }
   }
   componentDidMount () {
-    WooCommerce.getAsync('products').then(result => {
+    WooCommerce.getAsync('products?per_page=99').then(result => {
       this.setState({
-        product: JSON.parse(result.toJSON().body).filter(item => item.in_stock === true)
+        product: JSON.parse(result.toJSON().body)
       })
     })
+
   }
   render () {
     console.log('PRODUCT', this.state.product)
@@ -25,7 +27,7 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item top'>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} /></a>
+            <Link to='/products/46' ><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} /></Link>
             <a href='#' className='title_link'><h3>Гідравлічне обладнання</h3></a>
             <a href='#'><button className='catalog'>Каталог товарів</button></a>
             <ul className='goods_item'>

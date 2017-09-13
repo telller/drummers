@@ -1,5 +1,21 @@
+@media only screen and (min-width: 48em)
+  .container
+    width: 61rem !important
+
+@media only screen and (min-width: 64em)
+  .container
+    width: 787px !important
+
+@media only screen and (min-width: 75em)
+  .container
+    width 1024px !important
+
+
+
+
 #product
-  max-width 768px
+  .container
+    max-width 1024px
   margin 0 auto
   padding 50px 0
   *
@@ -19,11 +35,9 @@
       padding 15px 0
       color #E00713
     img
-      align-self center
       padding 30px 0
     .description
       align-self center
-      width 75%
       h3
         padding 5px 0
       h4
@@ -37,34 +51,39 @@
         padding 0 0 5px
         color #BEBEBE
   .similar_products
-    padding 30px 0
-    display flex
-    justify-content space-between
     article
-      display flex
-      flex-direction column
-      align-items center
-      width 26%
+
+      margin 10px 10px 10px 10px
+      //background-color gray
+      border 1px solid black
+      position relative
+      height 273px
       img
+        position relative
+        display: block
+        margin: 0 auto
+        max-width 220px
+        height 150px
         padding-bottom 5px
       div
-        display flex
-        flex-direction column
-        align-items center
         padding 0 20px
-        h3
+        h4
           text-align center
           padding 5px 0
-        h4
+        h5
+          text-align center
           padding 5px 0
           color #868686
-        button
-          margin 10px 0
-          width 135px
-          height 30px
-          border none
-          border-radius 15px
-          background-color #E1010F
-          font-size 12px
-          color #fff
-          cursor pointer
+      button
+        position absolute
+        width 135px
+        left 50%
+        bottom 5px
+        margin-left -62px
+        height 30px
+        border none
+        border-radius 15px
+        background-color #E1010F
+        font-size 12px
+        color #fff
+        cursor pointer

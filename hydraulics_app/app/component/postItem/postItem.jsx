@@ -30,6 +30,7 @@ class BlogItem extends Component {
     return moment(date).date() + ' ' + months[moment(date).month()]
   }
   render () {
+    console.log(this.props.el.tags);
     return (
       <div className='blog_item shadow'>
         <div className='labeles'>Поради</div>
@@ -37,13 +38,13 @@ class BlogItem extends Component {
         <div className='blog_title'>{this.props.el.title.rendered}</div>
         <div className='blog_text'>{this.state.showPost ? renderHTML(this.props.el.content.rendered) : renderHTML(this.props.el.excerpt.rendered)}</div>
         <div className='blog_link'>
-          <a className='read' onClick={() => this.setState({showPost: !this.setState.showPost})}>Читати далі</a>
+          <a className='read' onClick={() => this.setState({showPost: !this.state.showPost})}>{this.state.showPost ? 'Згорнути' : 'Читати далі'}</a>
           <div className='hashtag'>{this.props.el.tags.map((el, key) => {
             let tag = el
             return (
               <div key={key}>{this.props.tags.map(el => {
-                if (el.id === tag) {
-                  return el.name
+                if (el.id !== tag) {
+                  return el.name + ' '
                 }
               })}</div>
             )

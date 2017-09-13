@@ -10,7 +10,7 @@ export default class OurContacts extends Component {
       phone: '',
       theme: '',
       message: '',
-      url: this.props.url + '/wp-content/themes/hydraulics/sendEmail.php'
+      url: this.props.url + '/wp-content/themes/hydraulics/hydraulics_app/app/sendEmail.php'
     }
   }
   onSubmitForm (event) {
