@@ -14,11 +14,10 @@
 
 
 #product
-  .container
-    max-width 1024px
-  margin 0 auto
+  min-height 600px
+  margin: 40px auto
   padding 50px 0
-  *
+
     margin 0
     padding 0
   .black_line
@@ -28,15 +27,19 @@
     letter-spacing 1px
     padding-bottom 12px
   .product_page
-    display flex
-    flex-direction column
     padding-bottom 40px
     h2
       padding 15px 0
       color #E00713
     img
+      display: block;
       padding 30px 0
+      max-width: 720px;
+      max-height: 650px;
+      width: 100%;
+      margin: 0 auto;
     .description
+
       align-self center
       h3
         padding 5px 0
@@ -51,20 +54,23 @@
         padding 0 0 5px
         color #BEBEBE
   .similar_products
+    margin 10px 0;
     article
-
-      margin 10px 10px 10px 10px
-      //background-color gray
-      border 1px solid black
+      box-shadow: -1px -1px 18px -4px rgba(0,0,0,0.75);
+      background-color #ededed
+      margin-top 15px
+      margin-bottom 15px
       position relative
-      height 273px
+      min-height 320px
       img
         position relative
         display: block
         margin: 0 auto
         max-width 220px
-        height 150px
+        width 90%
+        height 170px
         padding-bottom 5px
+        padding-top 10px
       div
         padding 0 20px
         h4
@@ -74,16 +80,25 @@
           text-align center
           padding 5px 0
           color #868686
-      button
+      a
         position absolute
         width 135px
         left 50%
-        bottom 5px
+        bottom 12px
         margin-left -62px
         height 30px
+        padding-top 5px
         border none
+        outline none
         border-radius 15px
         background-color #E1010F
         font-size 12px
         color #fff
         cursor pointer
+        padding-left: 5px;
+        &:hover,
+          text-decoration none
+        &:active
+          text-decoration none
+        &:focus
+          text-decoration none

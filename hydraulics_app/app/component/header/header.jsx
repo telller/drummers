@@ -32,8 +32,8 @@ class Header extends Component {
             <nav>
               <ul className='menu'>
                 <li className='menu_item'><Link className='menu_link' to='/' activeClassName='active'>Головна</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/catalogProduct' activeClassName='active'>Каталог товарів</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/aboutUs' activeClassName='active'>Про нас</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/catalogproduct' activeClassName='active'>Каталог товарів</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/aboutus' activeClassName='active'>Про нас</Link></li>
                 <li className='menu_item'><Link className='menu_link' to='/blogposts' activeClassName='active'>Блог</Link></li>
                 <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
               </ul>

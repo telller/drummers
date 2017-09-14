@@ -24,7 +24,6 @@ class Products extends Component {
     //console.log(this.props);
   }
   render () {
-    console.log(this.props.params.category);
     return (
       <div id='products'>
         <Header />

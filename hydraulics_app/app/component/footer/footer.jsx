@@ -2,10 +2,38 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router'
+import WooCommerce from '../../connect-woocom-api'
+
 import './footer.styl'
 
 class Footer extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      categories: []
+    }
+  }
+  componentDidMount(){
+    WooCommerce.getAsync('products/categories?per_page=99').then(result => {
+      this.setState({
+        categories: JSON.parse(result.toJSON().body)
+      })
+    })
+  }
+  facebook(purl, ptitle, pimg) {
+    this.state.url = ('http://www.facebook.com/sharer.php?s=100' + '&title=' + encodeURIComponent(ptitle) + '&u=' + encodeURIComponent(purl) + '&picture=' + encodeURIComponent(pimg))
+    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  }
+  twitter(purl, ptitle) {
+    this.state.url = 'http://twitter.com/share?' + 'text=' + encodeURIComponent(ptitle) + '&url=' + encodeURIComponent(purl) + '&counturl=' + encodeURIComponent(purl)
+    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  }
+  googleplus(purl, ptitle) {
+    this.state.url = 'https://plus.google.com/share?' + 'text=' + encodeURIComponent(ptitle) + '&url=' + encodeURIComponent(purl) + '&counturl=' + encodeURIComponent(purl)
+    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  }
   render () {
+    console.log(this.state.categories);
     return (
       <footer id='footer'>
         <div className='main_ftr'>
@@ -16,14 +44,21 @@ class Footer extends Component {
           <div className='rubric'>
             <h4 className='titel'>Рубрики</h4>
             <ul className='rubric_list'>
-              <li><Link to='/catalogProduct'>Гідравлічне обладнання</Link></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if ((item.parent === 0 || item.parent === 72) && item.id !== 72 ) {
+                    return <li key={index}><Link to={'/products/'+ item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
+              {/* <li><Link to='/catalogproduct'>Гідравлічне обладнання</Link></li>
               <li><Link to='/catalogProduct'>Металообробні станки</Link></li>
               <li><Link to='/catalogProduct'>Автозапчастини</Link></li>
               <li><Link to='/catalogProduct'>Ремонт гідроциліндрів</Link></li>
               <li><Link to='/catalogProduct'>Ремонт гідрошлангів</Link></li>
-              <li><Link to='/catalogProduct'>Ремонт паливної арматури</Link></li>
+              <li><Link to='/catalogProduct'>Ремонт паливної арматури</Link></li> */}
               <li><Link to='/blog'>Блог</Link></li>
-              <li><Link to='/aboutUs'>Про нас</Link></li>
+              <li><Link to='/aboutus'>Про нас</Link></li>
             </ul>
           </div>
           <div className='contact_ftr'>
@@ -50,11 +85,9 @@ class Footer extends Component {
           </form>
           <div className='social'>
             <ul className='social_list'>
-              <li><a href='#' className='link fb' /></li>
-              <li><a href='#' className='link twit' /></li>
-              <li><a href='#' className='link goodle' /></li>
-              <li><a href='#' className='link inst' /></li>
-              <li><a href='#' className='link dot' /></li>
+              <li><a onClick={() => this.facebook(this.props.blog.description, this.props.blog.url, this.props.main.media_carousel1)} className='link' /><i className="fa fa-facebook-official" aria-hidden="true"></i></li>
+              <li><a onClick={() => this.twitter(this.props.blog.description, this.props.blog.url)} className='link' /><i className="fa fa-twitter-square" aria-hidden="true"></i></li>
+              <li><a onClick={() => this.googleplus(this.props.blog.description, this.props.blog.url)} className='link' /><i className="fa fa-instagram" aria-hidden="true"></i></li>
             </ul>
           </div>
         </div>
@@ -67,7 +100,7 @@ Footer.propTypes = {
 }
 
 const mapStateToProps = state => {
-  return { main: state.main, router: state.router }
+  return { main: state.main, router: state.router, blog: state.blog }
 }
 const mapDispatchToProps = () => {
   return {}

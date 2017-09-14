@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import WooCommerce from '../../connect-woocom-api'
+import {Link} from 'react-router'
 import './content.styl'
 
 class Content extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showModal: false
+      showModal: false,
+      categories: []
     }
     this.handleModal = this.handleModal.bind(this)
     this.close = this.close.bind(this)
@@ -21,60 +24,64 @@ class Content extends Component {
   open () {
     this.setState({showModal: true})
   }
+  componentDidMount () {
+    WooCommerce.getAsync('products/categories?per_page=99').then(result => {
+      this.setState({
+        categories: JSON.parse(result.toJSON().body)
+      })
+    })
+  }
   render () {
     return (
       <div id='content'>
         <section className='content_item'>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url}/></a>
-            <a href='#' className='title_link'><h3 className='goods_title'>Гідравлічне обладнання</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/46' ><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} /></Link>
+            <Link to='/products/46' className='goods_title'><h3>Гідравлічне обладнання</h3></Link>
+            <Link to='/products/46'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>гідравлічні насоси</a></li>
-              <li><a href='#'>гідравлічне обладнання</a></li>
-              <li><a href='#'>шланги</a></li>
-              <li><a href='#'>трубки</a></li>
-              <li><a href='#'>компресори</a></li>
-              <li><a href='#'>запчастини до гідравліки</a></li>
-              <li><a href='#'>форсунки</a></li>
-              <li><a href='#'>корпуси до редукторів</a></li>
-              <li><a href='#'>редуктори</a></li>
-              <li><a href='#'>насоси</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 46) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></a>
-            <a href='#' className='title_link'><h3 className='goods_title'>Металообробні станки</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/56'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></Link>
+            <Link to='/products/56' className='goods_title'><h3>Металообробні станки</h3></Link>
+            <Link to='/products/56'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>станки DELLA</a></li>
-              <li><a href='#'>станки FOX</a></li>
-              <li><a href='#'>станки METALFULL</a></li>
-              <li><a href='#'>дробильні станки</a></li>
-              <li><a href='#'>гравіровочні станки</a></li>
-              <li><a href='#'>відбивочні станки FELL</a></li>
-              <li><a href='#'>станки CAT</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 56) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></a>
-            <a href='#' className='title_link'><h3 className='goods_title'>Запчастини для авто</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/64'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></Link>
+            <Link to='/products/64' className='goods_title'><h3>Запчастини для авто</h3></Link>
+            <Link to='/products/64'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>запчастини до двигуна</a></li>
-              <li><a href='#'>запчастини до ПК</a></li>
-              <li><a href='#'>диски та шини</a></li>
-              <li><a href='#'>форсунки</a></li>
-              <li><a href='#'>корпуса</a></li>
-              <li><a href='#'>авто метизи</a></li>
-              <li><a href='#'>автомагнітоли</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 64) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
         </section>
         <section className='content_item bottom'>
           <article className='question goods'>
             <h3 className='item_title'>Є ПИТАННЯ?</h3>
-            <p>Залиште заявку на консультацію з фахівцем або зателефонуйте нам <span>(050) 313 55 12</span></p>
+            <p>Залиште заявку на консультацію з фахівцем або зателефонуйте нам <span>{this.props.main.contact_one_phone}</span></p>
             <button className='consultation' onClick={this.handleModal}><img className='phone' alt='phone' height={20} src={this.props.main.media_phone.url} />Отримати консультацію</button>
           </article>
           <article className='contacts goods'>
@@ -82,14 +89,14 @@ class Content extends Component {
             <ul className='contacts_list'>
               <li className='contacts_item location'>
                 <p className='contacts_txt'>Головний офіс</p>
-                <p className='contacts_txt'>м.Житомир вул Промислова 12</p>
+                <p className='contacts_txt'>{this.props.main.contact_location}м.Житомир вул Промислова 12</p>
               </li>
               <li className='contacts_item phone_of'>
                 <p className='contacts_txt'>Телефони офісу</p>
-                <p className='contacts_txt'>050 313 55 12, 095 567 42 85</p>
+                <p className='contacts_txt'>{this.props.main.contact_one_phone + ', ' + this.props.main.contact_two_phone}</p>
               </li>
               <li className='contacts_item mail'>
-                <p className='contacts_txt'><a className='our_site' href='#'>info@website.info</a></p>
+                <p className='contacts_txt'><a className='our_site' href={'mailto:' + this.props.main.contact_email}>{this.props.main.contact_email}</a></p>
               </li>
             </ul>
           </article>

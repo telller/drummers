@@ -48,6 +48,7 @@
     "wpapi": "^1.0.3"
   },
   "dependencies": {
+    "react-html-parser": "^2.0.0",
     "react-render-html": "^0.4.1"
   }
 }

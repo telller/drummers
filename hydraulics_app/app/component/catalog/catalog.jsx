@@ -8,19 +8,18 @@ class Catalog extends Component {
   constructor () {
     super()
     this.state = {
-      product: []
+      categories: []
     }
   }
   componentDidMount () {
-    WooCommerce.getAsync('products?per_page=99').then(result => {
+    WooCommerce.getAsync('products/categories?per_page=99').then(result => {
       this.setState({
-        product: JSON.parse(result.toJSON().body)
+        categories: JSON.parse(result.toJSON().body)
       })
     })
-
   }
   render () {
-    console.log('PRODUCT', this.state.product)
+    console.log('PRODUCT', this.state.categories)
     return (
       <div id='catalog'>
         <h2 className='title'>Каталог товарів</h2>
@@ -28,47 +27,44 @@ class Catalog extends Component {
         <section className='content_item top'>
           <article className='goods'>
             <Link to='/products/46' ><img className='bg_color' alt='img1' width={245} src={this.props.main.media_catalog1.url} /></Link>
-            <a href='#' className='title_link'><h3>Гідравлічне обладнання</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/46' className='title_link'><h3>Гідравлічне обладнання</h3></Link>
+            <Link to='/products/46'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>гідравлічні насоси</a></li>
-              <li><a href='#'>гідравлічне обладнання</a></li>
-              <li><a href='#'>шланги</a></li>
-              <li><a href='#'>трубки</a></li>
-              <li><a href='#'>компресори</a></li>
-              <li><a href='#'>запчастини до гідравліки</a></li>
-              <li><a href='#'>форсунки</a></li>
-              <li><a href='#'>корпуси до редукторів</a></li>
-              <li><a href='#'>редуктори</a></li>
-              <li><a href='#'>насоси</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 46) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></a>
-            <a href='#' className='title_link'><h3>Металообробні станки</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/56'><img className='bg_color' alt='img2' width={245} src={this.props.main.media_catalog2.url}/></Link>
+            <Link to='/products/56' className='title_link'><h3>Металообробні станки</h3></Link>
+            <Link to='/products/56'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>станки DELLA</a></li>
-              <li><a href='#'>станки FOX</a></li>
-              <li><a href='#'>станки METALFULL</a></li>
-              <li><a href='#'>дробильні станки</a></li>
-              <li><a href='#'>гравіровочні станки</a></li>
-              <li><a href='#'>відбивочні станки FELL</a></li>
-              <li><a href='#'>станки CAT</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 56) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
           <article className='goods'>
-            <a href='#'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></a>
-            <a href='#' className='title_link'><h3>Запчастини для авто</h3></a>
-            <a href='#'><button className='catalog'>Каталог товарів</button></a>
+            <Link to='/products/64'><img className='bg_color' alt='img3' width={245} src={this.props.main.media_catalog3.url}/></Link>
+            <Link to='/products/64' className='title_link'><h3>Запчастини для авто</h3></Link>
+            <Link to='/products/64'><button className='catalog'>Каталог товарів</button></Link>
             <ul className='goods_item'>
-              <li><a href='#'>запчастини до двигуна</a></li>
-              <li><a href='#'>запчастини до ПК</a></li>
-              <li><a href='#'>диски та шини</a></li>
-              <li><a href='#'>форсунки</a></li>
-              <li><a href='#'>корпуса</a></li>
-              <li><a href='#'>авто метизи</a></li>
-              <li><a href='#'>автомагнітоли</a></li>
+              {
+                this.state.categories.map((item, index) => {
+                  if (item.parent === 64) {
+                    return <li key={index}><Link to={'/products/' + item.id}>{item.name}</Link></li>
+                  }
+                })
+              }
             </ul>
           </article>
         </section>
@@ -76,19 +72,19 @@ class Catalog extends Component {
         <div className='line' />
         <section className='content_item'>
           <article>
-            <a href='#'><img className='bg_color' alt='img4' width={245} src={this.props.main.media_catalog4.url}/></a>
-            <a href='#' className='title_link'><h3>Ремонт гідрообладнання</h3></a>
-            <a href='#'><button className='catalog'>Каталог послуг</button></a>
+            <Link to='/products/73'><img className='bg_color' alt='img4' width={245} src={this.props.main.media_catalog4.url}/></Link>
+            <Link to='/products/73' className='title_link'><h3>Ремонт гідрообладнання</h3></Link>
+            <Link to='/products/73'><button className='catalog'>Каталог послуг</button></Link>
           </article>
           <article>
-            <a href='#'><img className='bg_color' alt='img5' width={245} src={this.props.main.media_catalog5.url}/></a>
-            <a href='#' className='title_link'><h3>Ремонт гідрошлангів</h3></a>
-            <a href='#'><button className='catalog'>Каталог послуг</button></a>
+            <Link to='/products/74'><img className='bg_color' alt='img5' width={245} src={this.props.main.media_catalog5.url}/></Link>
+            <Link to='/products/74' className='title_link'><h3>Ремонт гідрошлангів</h3></Link>
+            <Link to='/products/74'><button className='catalog'>Каталог послуг</button></Link>
           </article>
           <article>
-            <a href='#'><img className='bg_color' alt='img6' width={245} src={this.props.main.media_catalog6.url}/></a>
-            <a href='#' className='title_link'><h3>Ремонт паливної апаратури </h3></a>
-            <a href='#'><button className='catalog'>Каталог послуг</button></a>
+            <Link to='/products/75'><img className='bg_color' alt='img6' width={245} src={this.props.main.media_catalog6.url}/></Link>
+            <Link to='/products/75' className='title_link'><h3>Ремонт паливної апаратури </h3></Link>
+            <Link to='/products/75'><button className='catalog'>Каталог послуг</button></Link>
           </article>
         </section>
         <div className='grand_auto'>
