@@ -24,6 +24,6 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 "Content-Type: text/html; charset=utf-8" . PHP_EOL .
 'From: '.adopt($project_name).' <'.$_POST["my_phone"].'>' . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
-var_dump($_POST);
-// wp_mail($admin_email, $form_subject, $message, $headers);
-mail($admin_email, adopt($form_subject), $message, $headers );
+//var_dump($_POST);
+echo wp_mail($admin_email, $form_subject, $message, $headers);
+//mail($admin_email, adopt($form_subject), $message, $headers );

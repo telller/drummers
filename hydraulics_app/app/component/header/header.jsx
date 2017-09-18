@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import ContactForm from '../contactForm/contactForm.jsx'
 import {Link} from 'react-router'
 import './header.styl'
+
 
 class Header extends Component {
   constructor (props) {
@@ -32,9 +34,9 @@ class Header extends Component {
             <nav>
               <ul className='menu'>
                 <li className='menu_item'><Link className='menu_link' to='/' activeClassName='active'>Головна</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/catalogproduct' activeClassName='active'>Каталог товарів</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/aboutus' activeClassName='active'>Про нас</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/blogposts' activeClassName='active'>Блог</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/catalog' activeClassName='active'>Каталог товарів</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/about' activeClassName='active'>Про нас</Link></li>
+                <li className='menu_item'><Link className='menu_link' to='/blog' activeClassName='active'>Блог</Link></li>
                 <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
               </ul>
             </nav>
@@ -46,15 +48,7 @@ class Header extends Component {
             </Modal.Header>
             <Modal.Body>
               <p className='question'>Залиште повідомлення нижче - ми вам зателефонуємо</p>
-              <form action='#'>
-                <div className='flex_input'>
-                  <input className='short input' type='text' required placeholder="Ім'я" />
-                  <input className='short' type='tel' required placeholder='Телефон' />
-                </div>
-                <p><input type='text' required placeholder='Тема' /></p>
-                <textarea required placeholder='Ваше повідомлення' />
-                <input type='submit' value='Відправити повідомленя' />
-              </form>
+              <ContactForm close={this.close} />
             </Modal.Body>
             <Modal.Footer />
           </Modal>

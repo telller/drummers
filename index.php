@@ -16,5 +16,6 @@
 <body id="top">
   <div id="root"></div>
   <?php wp_footer(); ?>
+  <script src="https://use.fontawesome.com/e5c2f9dfe8.js"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-// import ContactForm from '../contactForm/contactForm.jsx'
 import Content from '../content/content.jsx'
 import Header from '../header/header.jsx'
 import Footer from '../footer/footer.jsx'

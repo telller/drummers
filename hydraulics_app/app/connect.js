@@ -1,10 +1,10 @@
-import { editor } from './users'
+import { admin } from './users'
 
 const WPAPI = require('wpapi')
 const WP = new WPAPI({
-  endpoint: 'http://hydravlics.loc/wp-json',
-  username: (editor().username),
-  password: (editor().password)
+  endpoint: location.origin + '/wp-json',
+  username: (admin().username),
+  password: (admin().password)
 })
 
 export default WP

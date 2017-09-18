@@ -3,6 +3,7 @@ import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import WooCommerce from '../../connect-woocom-api'
 import {Link} from 'react-router'
+import ContactForm from '../contactForm/contactForm.jsx'
 import './content.styl'
 
 class Content extends Component {
@@ -107,15 +108,7 @@ class Content extends Component {
           </Modal.Header>
           <Modal.Body>
             <p className='question'>Залиште повідомлення нижче - ми вам зателефонуємо</p>
-            <form action='#'>
-              <div className='flex_input'>
-                <input className='short input' type='text' required placeholder="Ім'я" />
-                <input className='short' type='tel' required placeholder='Телефон' />
-              </div>
-              <p><input type='text' required placeholder='Тема' /></p>
-              <textarea required placeholder='Ваше повідомлення' />
-              <input type='submit' value='Відправити повідомленя' />
-            </form>
+            <ContactForm close={() => this.close()} />
           </Modal.Body>
           <Modal.Footer />
         </Modal>

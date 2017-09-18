@@ -21,9 +21,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path='/' component={Home} />
-      <Route path='/aboutus' component={AboutUs} />
-      <Route path='/catalogproduct' component={CatalogProduct} />
-      <Route path='/blogposts' component={Blog} />
+      <Route path='/about' component={AboutUs} />
+      <Route path='/catalog' component={CatalogProduct} />
+      <Route path='/blog' component={Blog} />
       <Route path='/contacts' component={Contacts} />
       <Route path='/products/:category' component={Products} />
       <Route path='/product/:id' component={SingleProduct} />

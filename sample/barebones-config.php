@@ -383,8 +383,17 @@
                 'desc'     => __( '', 'redux-framework-drummers' ),
                 'subtitle' => __( 'Uploader to change logo.', 'redux-framework-drummers' ),
                 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+            ),
+            array(
+                'id'       => 'media_loader',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'media_loader', 'redux-framework-drummers' ),
+                'compiler' => 'true',
+                'desc'     => __( '', 'redux-framework-drummers' ),
+                'subtitle' => __( 'Uploader to media_loader.', 'redux-framework-drummers' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
             )
-
         )
     )  );
     // START SECTION CONTACT
@@ -420,6 +429,27 @@
                'type'     => 'text',
                'title'    => __( 'Our email', 'redux-framework-drummers' ),
                'subtitle' => __( 'Text Field for the contact our email', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_url_fb',
+               'type'     => 'text',
+               'title'    => __( 'Facebook', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Посилання на сторінку в фейсбуці', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_url_twit',
+               'type'     => 'text',
+               'title'    => __( 'Twitter', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Посилання на сторінку в твітері', 'redux-framework-drummers' ),
+               'desc'     => __( '', 'redux-framework-drummers' ),
+           ),
+           array(
+               'id'       => 'contact_url_inst',
+               'type'     => 'text',
+               'title'    => __( 'Instagram', 'redux-framework-drummers' ),
+               'subtitle' => __( 'Посилання на сторінку в інстаграмі', 'redux-framework-drummers' ),
                'desc'     => __( '', 'redux-framework-drummers' ),
            ),
        )

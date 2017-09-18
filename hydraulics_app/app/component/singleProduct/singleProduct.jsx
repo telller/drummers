@@ -3,15 +3,18 @@ import WooCommerce from '../../connect-woocom-api'
 import ReactHtmlParser from 'react-html-parser'
 import Footer from '../footer/footer.jsx'
 import Header from '../header/header.jsx'
+import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import './singleProduct.styl'
 
-
-export default class SingleProduct extends Component {
+class SingleProduct extends Component {
   constructor(props){
     super(props)
     this.state = {
       product: null,
-      products: []
+      products: [],
+      loaderVisible: true
+
     }
   }
   componentWillMount(){
@@ -21,7 +24,8 @@ export default class SingleProduct extends Component {
       })
       WooCommerce.getAsync('products?category=' + JSON.parse(result.toJSON().body).categories[0].id + '&per_page=4').then(data => {
         this.setState({
-          products: JSON.parse(data.toJSON().body).filter(item => JSON.parse(result.toJSON().body).id !== item.id)
+          products: JSON.parse(data.toJSON().body).filter(item => JSON.parse(result.toJSON().body).id !== item.id),
+          loaderVisible: false
         })
       })
     })
@@ -39,12 +43,13 @@ export default class SingleProduct extends Component {
     })
   }
   render () {
-    console.log(this.state.products);
     return (
-      <div>
+      <div id='single-product'>
         <Header />
+        
+        <img className={this.state.loaderVisible ? 'loader' : 'loader hidden'} src={this.props.main.media_loader.url} />
 
-        <div className='container' id='product'>
+        <div className={this.state.loaderVisible ? 'container hidden' : 'container'} id='product'>
           <div className='product_page'>
             <h2>{this.state.product && this.state.product.name}</h2>
             <div className='black_line'></div>
@@ -84,3 +89,10 @@ export default class SingleProduct extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return { main: state.main, router: state.router }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct)

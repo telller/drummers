@@ -10,16 +10,12 @@ export default class Product extends Component {
 
   }
   render () {
-    console.log(this.props.products);
 
     return (
       <div className='container' id='product'>
-
-        {/* <div className='black_line' /> */}
         <div className='row similar_products center-xs'>
           {
             this.props.products.map(item => {
-              console.log(item.id);
               return (
                 <div key={item.id} className='col-xs-6 col-sm-4 col-md-3'>
                   <article>
@@ -34,23 +30,6 @@ export default class Product extends Component {
               )
             })
           }
-
-          {/* <article>
-            <img src='#' alt='pic2' />
-            <div>
-              <h3>Гідроклапан РВ-43-5 (ISO 78)</h3>
-              <h4>780 грн</h4>
-              <button className='look'>Переглянути товар</button>
-            </div>
-          </article>
-          <article>
-            <img src='#' alt='pic2' />
-            <div>
-              <h3>Гідроклапан РВ-43-2 (ISO 56)</h3>
-              <h4>475 грн</h4>
-              <button className='look'>Переглянути товар</button>
-            </div>
-          </article> */}
         </div>
       </div>
     )

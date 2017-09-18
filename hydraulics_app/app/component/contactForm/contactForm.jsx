@@ -23,13 +23,11 @@ class ContactForm extends Component {
       emailValue: event.target.value
     })
     if (event.target.value !== '') {
-      console.log('true')
       this.setState({
         email: true
       })
       return
     } else {
-      console.log('false')
       this.setState({
         email: false
       })
@@ -79,11 +77,9 @@ class ContactForm extends Component {
     }
   }
   sendEmail (event) {
-    event.preventDefault()
-    // document.getElementById('contactForm').reset()
     let xhr = new XMLHttpRequest()
     let params = 'project_name=' + encodeURIComponent('Hydraulics') +
-     '&admin_email=' + encodeURIComponent('vlad.golyachenko@gmail.com') +
+     '&admin_email=' + encodeURIComponent(this.props.blog.admin_email) +
      '&form_subject=' + encodeURIComponent(this.state.subjectValue) +
      '&my_name=' + encodeURIComponent(this.state.nameValue) +
      '&my_email=' + encodeURIComponent(this.state.emailValue) +
@@ -108,13 +104,13 @@ class ContactForm extends Component {
       messageValue: '',
       madalshow: true
     })
+    this.props.close()
+    event.preventDefault()
   }
   render () {
     return (
       <div id='contactForm'>
         <form onSubmit={event => this.sendEmail(event)}>
-          <h3>Зв'язатись з нами</h3>
-          <p className='question'>Задайте нам питання, залиште повідомлення нижче</p>
           <div className='flex_input'>
             <input onChange={event => this.handleChangeName(event)} className='short input' type='text' required placeholder="Ім'я" />
             <input onChange={event => this.handleChangeEmail(event)} className='short' type='tel' required placeholder='Телефон' />
@@ -128,7 +124,7 @@ class ContactForm extends Component {
   }
 }
 const mapStateToProps = state => {
-  return { main: state.main, router: state.router }
+  return { main: state.main, router: state.router, blog: state.blog }
 }
 const mapDispatchToProps = () => {
   return {}

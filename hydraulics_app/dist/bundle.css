@@ -1,3 +1,56 @@
+#contactForm form h3 {
+  font-size: 26px;
+  padding: 5px 0;
+}
+#contactForm form .question {
+  padding: 5px 0 10px;
+  margin-bottom: 10px;
+  color: #5a5a5a;
+  border-bottom: 1px solid #decfc5;
+}
+#contactForm form .flex_input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#contactForm form .short {
+  width: 48%;
+}
+#contactForm form p {
+  font-size: 19px;
+  padding: 10px 0;
+}
+#contactForm form p [type='text'] {
+  width: 100%;
+}
+#contactForm form [type='text'],
+#contactForm form [type='tel'] {
+  text-indent: 10px;
+  border: none;
+  background-color: #f8f9fd;
+  height: 36px;
+}
+#contactForm form textarea {
+  width: 100%;
+  background-color: #f8f9fd;
+  border: none;
+  height: 80px;
+  max-width: 490px;
+}
+#contactForm form [type='submit'] {
+  font-size: 19px;
+  margin: 10px;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  color: #e00713;
+  cursor: pointer;
+}
+#contactForm .google_map {
+  height: 300px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
 #root {
   overflow: hidden;
   min-width: 480px;
@@ -397,12 +450,13 @@
 }
 #footer .sub_ftr .social_list li {
   padding: 0 5px;
+  cursor: pointer;
 }
 #footer .sub_ftr .social_list .link {
   display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #2e2e2e;
+}
+#footer .sub_ftr .social_list .fa {
+  font-size: 24px;
 }
 @media screen and (min-width: 690px) {
   #footer .logo_ftr {
@@ -452,75 +506,6 @@
   #footer .social {
     margin-top: 20px;
   }
-}
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
-  align-items: center;
-  min-height: 100vh;
-  background-color: rgba(0,0,0,0.6);
-}
-#contactForm form {
-  width: 40%;
-  padding: 25px 30px 35px;
-  -webkit-box-shadow: -1px -1px 18px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: -1px -1px 18px -4px rgba(0,0,0,0.75);
-  box-shadow: -1px -1px 18px -4px rgba(0,0,0,0.75);
-  background-color: #fff;
-}
-#contactForm form h3 {
-  font-size: 26px;
-  padding: 5px 0;
-}
-#contactForm form .question {
-  padding: 5px 0 10px;
-  margin-bottom: 10px;
-  color: #5a5a5a;
-  border-bottom: 1px solid #decfc5;
-}
-#contactForm form .flex_input {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-#contactForm form .short {
-  width: 48%;
-}
-#contactForm form p {
-  font-size: 19px;
-  padding: 10px 0;
-}
-#contactForm form p [type='text'] {
-  width: 100%;
-}
-#contactForm form [type='text'],
-#contactForm form [type='tel'] {
-  text-indent: 10px;
-  border: none;
-  background-color: #f8f9fd;
-  height: 36px;
-}
-#contactForm form textarea {
-  width: 100%;
-  background-color: #f8f9fd;
-  border: none;
-  height: 80px;
-}
-#contactForm form [type='submit'] {
-  font-size: 19px;
-  margin: 10px;
-  border: none;
-  background: transparent;
-  text-transform: uppercase;
-  color: #e00713;
-  cursor: pointer;
-}
-#contactForm .google_map {
-  height: 300px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 #ourContacts {
   max-width: 960px;
@@ -925,6 +910,10 @@
   margin: 0 auto;
   padding: 50px 0;
 }
+#ourBlog .loader {
+  display: block;
+  margin: 150px auto;
+}
 #ourBlog .blog_button_load_more {
   position: relative;
   padding: 10px 20px;
@@ -1086,6 +1075,29 @@
     display: none;
   }
 }
+#products .loader {
+  display: block;
+  margin: 150px auto;
+}
+#products .blog_button_load_more {
+  position: relative;
+  padding: 10px 20px;
+  height: 50px;
+  width: 250px;
+  background-color: #fff;
+  border: none;
+  left: 50%;
+  margin-left: -125px;
+  text-transform: uppercase;
+  color: #ef1b23;
+  font-size: 18px;
+outline
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+#products .blog_button_load_more:hover {
+  color: #808080;
+}
 @media only screen and (min-width: 48em) {
   .container {
     width: 61rem !important;
@@ -1207,4 +1219,8 @@
 }
 #product .similar_products article a:focus {
   text-decoration: none;
+}
+#single-product .loader {
+  display: block;
+  margin: 150px auto;
 }

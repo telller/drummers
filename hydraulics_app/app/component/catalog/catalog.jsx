@@ -19,7 +19,6 @@ class Catalog extends Component {
     })
   }
   render () {
-    console.log('PRODUCT', this.state.categories)
     return (
       <div id='catalog'>
         <h2 className='title'>Каталог товарів</h2>

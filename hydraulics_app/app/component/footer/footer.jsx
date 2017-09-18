@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import WP from '../../connect'
 import {Link} from 'react-router'
 import WooCommerce from '../../connect-woocom-api'
 
@@ -10,7 +11,8 @@ class Footer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      categories: []
+      categories: [],
+      emailValue: ''
     }
   }
   componentDidMount(){
@@ -20,20 +22,23 @@ class Footer extends Component {
       })
     })
   }
-  facebook(purl, ptitle, pimg) {
-    this.state.url = ('http://www.facebook.com/sharer.php?s=100' + '&title=' + encodeURIComponent(ptitle) + '&u=' + encodeURIComponent(purl) + '&picture=' + encodeURIComponent(pimg))
-    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  openNewTab(url) {
+    window.open(url,'_blank')
   }
-  twitter(purl, ptitle) {
-    this.state.url = 'http://twitter.com/share?' + 'text=' + encodeURIComponent(ptitle) + '&url=' + encodeURIComponent(purl) + '&counturl=' + encodeURIComponent(purl)
-    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  hendleSubscribingEmail({target}){
+    this.setState({
+      emailValue: target.value
+    })
   }
-  googleplus(purl, ptitle) {
-    this.state.url = 'https://plus.google.com/share?' + 'text=' + encodeURIComponent(ptitle) + '&url=' + encodeURIComponent(purl) + '&counturl=' + encodeURIComponent(purl)
-    window.open(this.state.url,'','toolbar=0,status=0,width=626,height=436');
+  sendEmail(event){
+    WP.users().create({
+      username: this.state.emailValue,
+      email: this.state.emailValue,
+      password: this.state.emailValue
+    })
+    event.preventDefault()
   }
   render () {
-    console.log(this.state.categories);
     return (
       <footer id='footer'>
         <div className='main_ftr'>
@@ -51,14 +56,9 @@ class Footer extends Component {
                   }
                 })
               }
-              {/* <li><Link to='/catalogproduct'>Гідравлічне обладнання</Link></li>
-              <li><Link to='/catalogProduct'>Металообробні станки</Link></li>
-              <li><Link to='/catalogProduct'>Автозапчастини</Link></li>
-              <li><Link to='/catalogProduct'>Ремонт гідроциліндрів</Link></li>
-              <li><Link to='/catalogProduct'>Ремонт гідрошлангів</Link></li>
-              <li><Link to='/catalogProduct'>Ремонт паливної арматури</Link></li> */}
+
               <li><Link to='/blog'>Блог</Link></li>
-              <li><Link to='/aboutus'>Про нас</Link></li>
+              <li><Link to='/about'>Про нас</Link></li>
             </ul>
           </div>
           <div className='contact_ftr'>
@@ -73,21 +73,21 @@ class Footer extends Component {
                 <p>{this.props.main.contact_one_phone}, {this.props.main.contact_two_phone}</p>
               </li>
               <li>
-                <p><a href='#' className='our_site'>{this.props.main.contact_email}</a></p>
+                <p><a href='' className='our_site'>{this.props.main.contact_email}</a></p>
               </li>
             </ul>
           </div>
         </div>
         <div className='sub_ftr'>
-          <form className='controls' action=''>
-            <input className='controls_text' type='text' required placeholder='Введіть email, отримуйте новини' />
+          <form onSubmit={event => this.sendEmail(event)} className='controls' action=''>
+            <input onChange={(event) => this.hendleSubscribingEmail(event)} className='controls_text' type='email' required placeholder='Введіть email, отримуйте новини' />
             <input className='controls_submit' type='submit' value='&#62;' />
           </form>
           <div className='social'>
             <ul className='social_list'>
-              <li><a onClick={() => this.facebook(this.props.blog.description, this.props.blog.url, this.props.main.media_carousel1)} className='link' /><i className="fa fa-facebook-official" aria-hidden="true"></i></li>
-              <li><a onClick={() => this.twitter(this.props.blog.description, this.props.blog.url)} className='link' /><i className="fa fa-twitter-square" aria-hidden="true"></i></li>
-              <li><a onClick={() => this.googleplus(this.props.blog.description, this.props.blog.url)} className='link' /><i className="fa fa-instagram" aria-hidden="true"></i></li>
+              <li className={this.props.main.contact_url_fb ? '' : 'hidden'} onClick={() => this.openNewTab(this.props.main.contact_url_fb)}><a className='link' /><i className="fa fa-facebook-official" aria-hidden="true"></i></li>
+              <li className={this.props.main.contact_url_twit ? '' : 'hidden'} onClick={() => this.openNewTab(this.props.main.contact_url_twit)}><a className='link' /><i className="fa fa-twitter-square" aria-hidden="true"></i></li>
+              <li className={this.props.main.contact_url_inst ? '' : 'hidden'} onClick={() => this.openNewTab(this.props.main.contact_url_inst)}><a className='link' /><i className="fa fa-instagram" aria-hidden="true"></i></li>
             </ul>
           </div>
         </div>
