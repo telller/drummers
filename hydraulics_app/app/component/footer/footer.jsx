@@ -57,7 +57,7 @@ class Footer extends Component {
                 })
               }
 
-              <li><Link to='/blog'>Блог</Link></li>
+              {/* <li><Link to='/blog'>Блог</Link></li> */}
               <li><Link to='/about'>Про нас</Link></li>
             </ul>
           </div>

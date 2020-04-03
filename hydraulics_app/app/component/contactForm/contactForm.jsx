@@ -117,7 +117,7 @@ class ContactForm extends Component {
           </div>
           <p><input onChange={event => this.handleChangeSubject(event)} type='text' required placeholder='Тема' /></p>
           <textarea onChange={event => this.handleChangeMessage(event)} required placeholder='Ваше повідомлення' />
-          <input type='submit' value='Відправити повідомленя' />
+          <input type='submit' value='Відправити повідомлення' />
         </form>
       </div>
     )

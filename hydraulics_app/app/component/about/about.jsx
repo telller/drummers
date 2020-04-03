@@ -35,7 +35,7 @@ class About extends Component {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Link to='/catalogProduct'><button className='catalog'>Каталог товарів</button></Link>
+        <Link to='/catalog'><button className='catalog'>Каталог товарів</button></Link>
       </div>
     )
   }
