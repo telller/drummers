@@ -36,7 +36,7 @@ class Header extends Component {
                 <li className='menu_item'><Link className='menu_link' to='/' activeClassName='active'>Головна</Link></li>
                 <li className='menu_item'><Link className='menu_link' to='/catalog' activeClassName='active'>Каталог товарів</Link></li>
                 <li className='menu_item'><Link className='menu_link' to='/about' activeClassName='active'>Про нас</Link></li>
-                <li className='menu_item'><Link className='menu_link' to='/blog' activeClassName='active'>Блог</Link></li>
+                {/* <li className='menu_item'><Link className='menu_link' to='/blog' activeClassName='active'>Блог</Link></li> */}
                 <li className='menu_item'><Link className='menu_link' to='/contacts' activeClassName='active'>Контакти</Link></li>
               </ul>
             </nav>

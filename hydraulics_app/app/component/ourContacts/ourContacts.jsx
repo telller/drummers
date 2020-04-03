@@ -66,7 +66,7 @@ export default class OurContacts extends Component {
                 <p>{this.props.location}</p>
               </li>
               <li className='phone_of'>
-                <p>Телефони офvvісу</p>
+                <p>Телефони офiсу</p>
                 <p>{this.props.oneNumber},</p>
                 <p>{this.props.twoNumber}</p>
               </li>
@@ -84,7 +84,7 @@ export default class OurContacts extends Component {
             </div>
             <p><input value={this.state.theme} onChange={event => this.heandleTheme(event)} type='text' required placeholder='Тема' /></p>
             <textarea value={this.state.message} onChange={event => this.heandleMessage(event)} required placeholder='Ваше повідомлення' />
-            <input type='submit' value='Відправити повідомленя' />
+            <input type='submit' value='Відправити повідомлення' />
           </form>
         </section>
       </div>

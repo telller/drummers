@@ -32,7 +32,7 @@ class OurBlog extends Component {
       '8': 'вересня',
       '9': 'жовтня',
       '10': 'листопада',
-      '11': 'груденя'
+      '11': 'грудня'
     }
     return moment(date).date() + ' ' + months[moment(date).month()]
   }
@@ -94,7 +94,7 @@ class OurBlog extends Component {
           <h1>Блог</h1>
 
           <form onSubmit={(event) => this.searchposts(event)}>
-            <input onChange={(event) => this.setState({searchValue: event.target.value})} type='se arch' placeholder='Пошук' />
+            <input onChange={(event) => this.setState({searchValue: event.target.value})} className='search_field' type='search' placeholder='Пошук' />
             <button onClick={(event) => this.searchposts(event)}  className='search'><img className='searh_btn' height={24} src={this.props.main.media_search.url} /></button>
           </form>
         </div>

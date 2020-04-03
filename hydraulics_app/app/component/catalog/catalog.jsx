@@ -89,10 +89,8 @@ class Catalog extends Component {
         <div className='grand_auto'>
           <img width={150} src={this.props.main.media_logo.url} alt='logo' />
           <div className='grand_info'>
-            <h2>Найнижчі ціни - найкраща якість</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitationUt enim ad minim veniam, quis nostrud exercitation</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+            <h2>{this.props.main.catalog_heading}</h2>
+            <p>{this.props.main.catalog_textarea}</p>
           </div>
         </div>
       </div>
